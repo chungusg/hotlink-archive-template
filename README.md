@@ -4,6 +4,8 @@ See the preview here: https://hotlink-archive-template.pages.dev/
 
 *To-Do*
 - Private repository
+- ![Alt text](https://assets.digitalocean.com/articles/alligator/boo.svg "a title")
+- My favorite search engine is [Duck Duck Go](https://duckduckgo.com "The best search engine for privacy").
 
 This guide is for an easy way to host files for hotlinking on AO3 or elsewhere, using github and cloudflare pages. 
 
