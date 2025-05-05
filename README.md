@@ -1,4 +1,4 @@
-# hotlink archive TEMPLATE
+# hotlink archive Template
 
 *To-Do*
 - Sign up for Cloudflare Pages
