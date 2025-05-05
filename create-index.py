@@ -602,7 +602,7 @@ img {
 if __name__ == '__main__': 
      make_index_html('.')
      
-with open("./tank/index.py") as file:
+with open("./rename1/index.py") as file:
      exec(file.read())
      
 with open("./fan-stuff/index.py") as file:
