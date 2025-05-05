@@ -21,9 +21,7 @@ def make_index_html( path ):
     path = path / 'fan-stuff'
     
     title = path.resolve().name
-    # title = ( '''
-    #          Indecisive's Archive
-    #          ''' )
+
     print( "Generating index.html for", title )
     
     ## Open index.html
@@ -35,7 +33,7 @@ def make_index_html( path ):
 				## Write body!
         out.write( '''
                   <p>
-                  this should be for fan files!
+                  this is where I put my fan-stuff
                   <br><br>
                   </p>
                   ''' )
