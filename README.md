@@ -92,7 +92,7 @@ Check your Github applications Repository Access settings. Go to your ACCOUNT Se
 Go back to step 4 in Basic Setup and check if you’ve given Actions permission to read and write.
 If that’s not the issue, check to see if you’ve set up your index.py files correctly. The folder names should correspond to the parent folders, and the create-index.py file in the outer-most folder should have the correct folder names at the VERY BOTTOM.
 
-###How do I rename a folder (or move a file) in Github’s web UI?
+### How do I rename a folder (or move a file) in Github’s web UI?
 It isn’t possible to directly rename a folder in Github’s web UI, doing it using Git on your computer is the most foolproof way to do it. But there is a way (except for media files). 
 
 Go into the folder you want to rename and select a file such as “index.html” and enter the “edit” mode. 
