@@ -20,9 +20,7 @@ def make_index_html( path ):
     path = path / 'rename1'
     
     title = path.resolve().name
-    # title = ( '''
-    #          Indecisive's Archive
-    #          ''' )
+
     print( "Generating index.html for", title )
     
     ## Open index.html
@@ -34,7 +32,7 @@ def make_index_html( path ):
 				## Write body!
         out.write( '''
                   <p>
-                  this is for my freshwater tanks stuff :)
+                  Edit this text
                   <br><br>
                   </p>
                   ''' )
