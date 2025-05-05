@@ -17,7 +17,7 @@ def make_index_html( path ):
     assert path.is_dir()
     # title = path.resolve().name
     title = ( '''
-             Indecisive's Archive
+             Hotlink Archive
              ''' )
     print( "Generating index.html for", title )
     
@@ -30,10 +30,7 @@ def make_index_html( path ):
 				## Write body!
         out.write( '''
                   <p>
-                  Test text for body
-                  no break before here
-                  </br>
-                  did that break work
+                  Edit text
                   <br><br>
                   </p>
                   ''' )
