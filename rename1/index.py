@@ -62,9 +62,12 @@ def make_index_html( path ):
         out.write( '''
 					</table>
           <br>
-          <p><strong>
-					<a href="https://indecisive-archive.pages.dev/">Home</a>
-					</strong></p>
+	  
+	## Insert a HOME Button    vvvv  Replace the URL with your Home Page  vvvvv
+	##  <p><strong>
+	##				<a href="https://hotlink-archive-template.pages.dev/">Home</a>
+	##				</strong></p>
+ 
 					</body>
 					</html>
 					''' )
