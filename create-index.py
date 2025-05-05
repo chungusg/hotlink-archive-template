@@ -17,7 +17,7 @@ def make_index_html( path ):
     assert path.is_dir()
     # title = path.resolve().name
     title = ( '''
-             Hotlink Archive
+             Hotlink Archive Template
              ''' )
     print( "Generating index.html for", title )
     
