@@ -17,7 +17,7 @@ def make_index_html( path ):
     assert path.is_dir()
     
 	## Navigate to inside current folder!
-    path = path / 'tank'
+    path = path / 'rename1'
     
     title = path.resolve().name
     # title = ( '''
