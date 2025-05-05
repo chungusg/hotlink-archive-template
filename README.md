@@ -1,5 +1,7 @@
 # hotlink archive Template
 
+See the preview here: https://hotlink-archive-template.pages.dev/
+
 *To-Do*
 - Sign up for Cloudflare Pages
 - Create Pages project and LINK to this repository
@@ -9,3 +11,4 @@
 - Rename folders as you like
   - edit folder names in .py files
 - etc.
+
