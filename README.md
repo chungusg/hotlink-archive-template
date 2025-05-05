@@ -7,4 +7,5 @@
   - If you choose MAIN, every change you commit to MAIN will be published to Pages
   - If you choose CLOUDFLARE, you will have to manually pull any changes from MAIN to CLOUDFLARE first, before anything is published to Pages
 - Rename folders as you like
+  - edit folder names in .py files
 - etc.
