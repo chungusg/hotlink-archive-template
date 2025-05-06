@@ -20,7 +20,8 @@ This is an easy, barebones way to permanently host images that you don't want de
 
 ## Basic Setup
 1. Create a github account
-![sign up for github](https://hotlink-archive-template.pages.dev/rename1/git-signup.gif)
+
+<img src="https://hotlink-archive-template.pages.dev/rename1/git-signup.gif" alt="sign up for github" height="400">
 
 2. Copy this template repository [hotlink-archive-template](https://github.com/chungusg/hotlink-archive-template) or make one from scratch
 
@@ -124,7 +125,7 @@ You can play with cloudflare and github to make deployment of your site complete
 #### Semi-Manual
 You could do a semi-automatic deployment, with a "Production" branch on your github that is separate from the branch you edit. This creates an extra step before anything is published on Cloudflare. A safeguard against accidental changes/deletion of sorts :)
 
-<img src="https://hotlink-archive-template.pages.dev/rename1/pages-settings.gif" alt="navigate to settings on cloudflare" height="300">
+<img src="https://hotlink-archive-template.pages.dev/rename1/pages-settings.gif" alt="navigate to settings on cloudflare" height="400">
 
 1. Go to Settings
 2. Choose Production build branch (MAIN or CLOUDFLARE) and enable (or disable) automatic deployments
