@@ -6,7 +6,7 @@
 
 from pathlib import Path
 
-SKIP_DIRS = [".git", "index.html","create-index.py",".github","README.md"]
+SKIP_DIRS = [".git", "index.html","create-index.py","create-index.exe",".github","README.md"]
 exclude=SKIP_DIRS
 
 def make_index_html( path ):
