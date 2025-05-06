@@ -21,7 +21,7 @@ This is an easy, barebones way to permanently host images that you don't want de
 ## Basic Setup
 1. Create a github account
 
-<img src="https://hotlink-archive-template.pages.dev/rename1/git-signup.gif" alt="sign up for github" height="400">
+<img src="https://hotlink-archive-template.pages.dev/rename1/git-signup.gif" alt="sign up for github" height="350">
 
 <br/>
 
@@ -29,28 +29,28 @@ This is an easy, barebones way to permanently host images that you don't want de
 
 The template repository uses a python Action to automatically create a "home" page with an index of all the files in the folder every time it is updated. 
 
-<img src="https://hotlink-archive-template.pages.dev/rename1/github-use-template.webp" alt="copy template" height="250">
+<img src="https://hotlink-archive-template.pages.dev/rename1/github-use-template.webp" alt="copy template" height="200">
 
 <br/>
 
-4. Enable Action permissions
+3. Enable Action permissions
 In order for the indexing script to work, you need to give Actions permission to read and write in your repository.
 Repository settings > Actions > General > Workflow Permissions
 ![permission setting](https://hotlink-archive-template.pages.dev/rename1/github-permission.png)
 
 
-3. Create a Cloudflare account
-<img src="https://hotlink-archive-template.pages.dev/rename1/pages-signup.gif" alt="signup for cloudflare pages" height="400">
+4. Create a Cloudflare account
+<img src="https://hotlink-archive-template.pages.dev/rename1/pages-signup.gif" alt="signup for cloudflare pages" height="350">
 <br/>
 
-4. Create a Pages project and link it to your Github repository
+5. Create a Pages project and link it to your Github repository
 - Be sure to use Pages, not Workers 
 - Workers is subsuming Pages on Cloudflare and now has all the same static hosting capabilities, in addition to its original server-side processing services. 
 HOWEVER, I still recommend Pages, in the instance that you do not have your own domain AND care about what your URL looks like. 
 e.g. For a project "MySite" your URL for Pages = *“MySite.pages.dev”*, while for Workers = *“MySite.username.workers.dev”* 
 Very minor, but something that bugs me :)
 
-5. Done with basic setup!
+6. Done with basic setup!
 - The default settings for your Pages project should grab the files from your Github repo every time your repository is updated.
 - To add files, upload them in your Github repository in the folder you want, and COMMIT the changes.
 
@@ -104,7 +104,7 @@ Check your Github applications Repository Access settings. Go to your ACCOUNT Se
 ![cloudflare access setting](https://hotlink-archive-template.pages.dev/rename1/github-access.png)
 
 ### Index action is failing!
-Go back to step 4 in **Basic Setup** and check if you’ve given Actions permission to read and write.
+Go back to step 3 in **Basic Setup** and check if you’ve given Actions permission to read and write.
 If that’s not the issue, check to see if you’ve set up your index.py files correctly. The folder names should correspond to the parent folders, and the create-index.py file in the outer-most folder should have the correct folder names at the VERY BOTTOM.
 
 ### How do I rename a folder (or move a file) in Github’s web UI?
