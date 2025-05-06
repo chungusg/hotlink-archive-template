@@ -189,7 +189,7 @@ Here’s some links I think will be useful (note: I don’t use this  method, so
 <br/>
 
 ### Storing Locally instead of on Github
-Although this guide is written with Cloudflare's Github integration in mind, particularly for easy online/mobile access, you can also keep your files locally on your PC and directly upload your assets onto your Pages project. Especially if you are concerned about privacy or security. 
+Although this guide is written with Cloudflare's Github integration in mind, particularly for easy online/mobile access, you can also keep your files locally on your PC and directly upload your assets onto your Pages project. This gives you full control over what happens to your files (keeping backups is a good idea, you can still use Github Desktop, just don't push/pull online).
 - Simply clone/download the repository as it is, customize it as you like, and upload everything to Cloudflare in a new **Pages** project (this is not an option for Workers).
 
 One thing that wil NOT work the same is the Create-Index Action that only works on Github. 
