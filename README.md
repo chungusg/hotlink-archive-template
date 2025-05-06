@@ -146,6 +146,8 @@ Here’s some links I think will be useful (note: I don’t use this  method, so
 
 <br/>
 
+---
+
 Find me on [Bluesky](https://bsky.app/profile/indecisive-fangirl.bsky.social) 
 
 I'll try to answer your questions as best I can! But really, I am the most amateur of amateurs and figured this all out using Google, so I might not be of much help ^^;
