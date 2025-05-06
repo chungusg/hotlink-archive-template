@@ -199,7 +199,7 @@ One thing that wil NOT work the same is the Create-Index Action that only works 
 
 ---
 
-Find me on [Bluesky](https://bsky.app/profile/indecisive-fangirl.bsky.social) 
+Find me on [Bluesky](https://bsky.app/profile/indecisive-fangirl.bsky.social). Or if you have a problem, open an [Issue](https://github.com/chungusg/hotlink-archive-template/issues) on this project :)
 
 I'll try to answer your questions as best I can! But really, I am the most amateur of amateurs and figured this all out using Google, so I might not be of much help ^^;
 
