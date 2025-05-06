@@ -5,7 +5,7 @@ See the demo site made from this template IN ACTION: https://hotlink-archive-tem
 
 **This guide is for an easy way to host files for hotlinking on AO3 or elsewhere, using github and cloudflare pages.**
 
-I've encountered far too many dead links in fanfics and forums simply because a hosting service decided to dump older files, or they decided to change their TOS to no longer allow hotlinking or certain kinds of content (nsfw, fictional graphic content). Currently, both Cloudflare and Github have TOS policies on par with AO3 in terms of content they allow, so it seems like a perfect solution for fandom.
+I've encountered far too many dead links in fanfics and forums simply because a hosting service decided to dump older files, or they decided to change their TOS to no longer allow hotlinking or certain kinds of content (nsfw, fictional graphic content). This method is a way to have full control over what you post without having to be at the mercy of policy changes or a site being shut down, and it seems like a perfect solution for fandom.
 
 This is an easy, barebones way to permanently host images that you don't want deleted unexpectedly or that you can't host elsewhere. (Emphasis on barebones. This will not be a nice portfolio style site. Unless you decide to code that yourself!)
 
@@ -203,4 +203,4 @@ Find me on [Bluesky](https://bsky.app/profile/indecisive-fangirl.bsky.social). O
 
 I'll try to answer your questions as best I can! But really, I am the most amateur of amateurs and figured this all out using Google, so I might not be of much help ^^;
 
-I also recommend [Squidge Images](https://images.squidge.org/) (an offshoot of Squidge.org) as a fairly trustworthy alternative. However, Squidge Images does have some additional obscenity rules that Squidge does not, and what crosses the line is at their discretion.
+I also recommend [Squidge Images](https://images.squidge.org/) (an offshoot of Squidge.org) as a fairly trustworthy alternative. However, Squidge Images does have some additional rules that Squidge does not, and what crosses the line is at their discretion.
