@@ -68,7 +68,7 @@ Very minor, but something that bugs me :)
 
 - The default settings for your Pages project should grab the files from your Github repo every time your repository is updated.
 - To add files, upload them in your Github repository in the folder you want, and COMMIT the changes.
-> Continue onto **More Setup** to 
+> Continue onto **More Setup** to customize your site
 
 <br/>
 
@@ -79,7 +79,9 @@ Github’s web UI is great, but it has major limitations. I highly recommend tha
 
 - **Download Github Desktop for an easy to use graphic UI, and “clone” (download a copy of) the repository you made.**
 - This is the best time to rename/rearrange folders + files, etc.
-	- There are other methods in the **Troubleshooting** section if you need, but this way is by far the easiest
+	- There are other methods in the **Troubleshooting** section if you need, but Github Desktop is by far the easiest way
+	- see **Adding/Renaming Folders** for important info on how to properly rename/add folders
+	- see **About the Index Page** for how to customize your index pages
 - Once you’re done editing, “push” (upload) all the changes you made to your online Github repository.
 
 Having some sort of text editor like Notepad++ is useful for editing any code, the automatic color-coding is very helpful. You can edit in plain old Notepad as well, it just won’t look as nice.
@@ -141,6 +143,7 @@ Check your Github applications Repository Access settings. Go to your ACCOUNT Se
 
 Go back to step 3 in **Basic Setup** and check if you’ve given Actions permission to read and write.
 If that’s not the issue, check to see if you’ve set up your index.py files correctly. The folder names should correspond to the parent folders, and the create-index.py file in the outer-most folder should have the correct folder names at the VERY BOTTOM.
+<br/>
 
 ### How do I rename a folder (or move a file) in Github’s web UI?
 
