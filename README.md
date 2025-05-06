@@ -5,7 +5,7 @@ See the demo site made from this template IN ACTION: https://hotlink-archive-tem
 
 **This guide is for an easy way to host files for hotlinking on AO3 or elsewhere, using github and cloudflare pages.**
 
-I've encountered far too many dead links in fanfics and forums simply because a hosting service decided to dump older files, or they decided to change their TOS to no longer allow hotlinking or certain kinds of content (nsfw, fictional graphic content). This method is a way to have full control over what you post without having to be at the mercy of policy changes or a site being shut down, and it seems like a perfect solution for fandom.
+I've encountered far too many dead links in fanfics and forums simply because a hosting service decided to dump older files, or they decided to change their TOS to no longer allow hotlinking or certain kinds of content (nsfw, fictional graphic content).
 
 This is an easy, barebones way to permanently host images that you don't want deleted unexpectedly or that you can't host elsewhere. (Emphasis on barebones. This will not be a nice portfolio style site. Unless you decide to code that yourself!)
 
