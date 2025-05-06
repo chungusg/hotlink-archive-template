@@ -23,13 +23,15 @@ This is an easy, barebones way to permanently host images that you don't want de
 
 <img src="https://hotlink-archive-template.pages.dev/rename1/git-signup.gif" alt="sign up for github" height="400">
 
+<br/>
+
 2. Copy this template repository [hotlink-archive-template](https://github.com/chungusg/hotlink-archive-template) or make one from scratch
 
 The template repository uses a python Action to automatically create a "home" page with an index of all the files in the folder every time it is updated. 
 
-![copy template](https://hotlink-archive-template.pages.dev/rename1/github-use-template.webp)
+<img src="https://hotlink-archive-template.pages.dev/rename1/github-use-template.webp" alt="copy template" height="250">
 
-
+<br/>
 
 4. Enable Action permissions
 In order for the indexing script to work, you need to give Actions permission to read and write in your repository.
@@ -38,8 +40,8 @@ Repository settings > Actions > General > Workflow Permissions
 
 
 3. Create a Cloudflare account
-![signup for cloudflare pages](https://hotlink-archive-template.pages.dev/rename1/pages-signup.gif)
-
+<img src="https://hotlink-archive-template.pages.dev/rename1/pages-signup.gif" alt="signup for cloudflare pages">
+<br/>
 
 4. Create a Pages project and link it to your Github repository
 - Be sure to use Pages, not Workers 
