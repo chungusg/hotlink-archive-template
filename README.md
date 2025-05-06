@@ -36,7 +36,9 @@ The template repository uses a python Action to automatically create a "home" pa
 **3. Enable Action permissions**
 
 In order for the indexing script to work, you need to give Actions permission to read and write in your repository.
+
 Repository settings > Actions > General > Workflow Permissions
+
 ![permission setting](https://hotlink-archive-template.pages.dev/rename1/github-permission.png)
 
 
