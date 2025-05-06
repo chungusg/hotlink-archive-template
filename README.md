@@ -44,7 +44,9 @@ Repository settings > Actions > General > Workflow Permissions
 <br/>
 
 5. Create a Pages project and link it to your Github repository
-- Be sure to use Pages, not Workers 
+
+~~Be sure to use Pages, not Workers~~ 
+
 - Workers is subsuming Pages on Cloudflare and now has all the same static hosting capabilities, in addition to its original server-side processing services. 
 HOWEVER, I still recommend Pages, in the instance that you do not have your own domain AND care about what your URL looks like. 
 e.g. For a project "MySite" your URL for Pages = *“MySite.pages.dev”*, while for Workers = *“MySite.username.workers.dev”* 
