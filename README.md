@@ -104,13 +104,13 @@ Adding or renaming folders involves some extra steps.
 ![where to change folder name](https://hotlink-archive-template.pages.dev/change-index-folder.png)
 
 
-2. Then the outer-most create-index.py file needs to be updated to match the new name as well. If you’ve added a new folder, duplicate and adjust the code to match. 
+2. Then the outer-most index.py file needs to be updated to match the new name as well. If you’ve added a new folder, duplicate and adjust the code to match. 
 This is found at the bottom.
 
 ![where to edit](https://hotlink-archive-template.pages.dev/create-index.png)
 
-- If you don’t need any folders at all, great! Just delete them and their contents! No need to edit any files. (Don’t delete “index.html” or “create-index.py” or “.github/workflows”!)
-- If you would like to have these folders for later use, leave them as-is and simply delete/comment out (using # at the beginning of a line will make it “invisible” to the computer) the relevant lines of code at the bottom of create-index.py like in the previous step for renaming folders.  Also, add the folder’s name to the “exclusions” list at the top of the create-index.py file so that it doesn’t show up on your index page.
+- If you don’t need any folders at all, great! Just delete them and their contents! No need to edit any files. (Don’t delete “index.html” or “index.py” or “.github/workflows”!)
+- If you would like to have these folders for later use, leave them as-is and simply delete/comment out (using # at the beginning of a line will make it “invisible” to the computer) the relevant lines of code at the bottom of index.py like in the previous step for renaming folders.  Also, add the folder’s name to the “exclusions” list at the top of the index.py file so that it doesn’t show up on your index page.
 
 ![enter the folder you want to exclude](https://hotlink-archive-template.pages.dev/rename1/index-exclude.png)
 
@@ -142,7 +142,7 @@ Check your Github applications Repository Access settings. Go to your ACCOUNT Se
 ### Index action is failing!
 
 Go back to step 3 in **Basic Setup** and check if you’ve given Actions permission to read and write.
-If that’s not the issue, check to see if you’ve set up your index.py files correctly. The folder names should correspond to the parent folders, and the create-index.py file in the outer-most folder should have the correct folder names at the VERY BOTTOM.
+If that’s not the issue, check to see if you’ve set up your "index.py" files correctly. The folder names should correspond to the parent folders, and the "index.py" file in the outer-most folder should have the correct folder names at the VERY BOTTOM.
 <br/>
 
 ### How do I rename a folder (or move a file) in Github’s web UI?
@@ -186,6 +186,14 @@ Here’s some links I think will be useful (note: I don’t use this  method, so
 
 - [How to configure Github webooks](https://magefan.com/blog/configure-webhooks-in-github?srsltid=AfmBOoo4gAHxJdunxkJlQ6ZhVnGVAVEuyRn5hnHBqTdbYmcHWFwIM5s8)
 
+<br/>
+
+### Storing Locally instead of on Github
+Although this guide is written with Cloudflare's Github integration in mind, you can also directly upload your assets onto your Pages project. Simply clone/download the repository as it is, customize it as you like, and upload everything to Cloudflare.
+
+One thing that wil NOT work the same is the Create-Index Action that only works on Github. 
+- I have made a "create-index.exe" that will execute the "index.py" files in the exact same way as they would work with the Action. You do not have to install python for this to work (if I did everything right). Simply run "create-index.exe" whenever you make a change and want to update the "index.html" files
+- Remember, this is EXACTLY THE SAME as the index Action, meaning you have to edit each "index.py" file when you rename folders, add a folder, want to exclude a file from the index, etc. (See [Adding/Renaming Folders](https://github.com/chungusg/hotlink-archive-template/tree/main#addingrenamingdeleting-folders) for how to do this)
 
 <br/>
 
