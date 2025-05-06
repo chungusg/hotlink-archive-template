@@ -1,6 +1,6 @@
 # hotlink archive Template
 
-See the preview here: https://hotlink-archive-template.pages.dev/
+See the demo site made from this template IN ACTION: https://hotlink-archive-template.pages.dev/
 
 
 **This guide is for an easy way to host files for hotlinking on AO3 or elsewhere, using github and cloudflare pages.**
@@ -107,18 +107,24 @@ It’s not possible to rename image/media files on Github’s web UI (it is poss
 So if you're uploading on mobile or through the Web UI, name your files with easy to remember and distinctive filenames before you go ahead and upload them. This makes everything much easier, and it makes your index look nice :)
 
 ### My website isn’t updating when I edit my Github repository!
+
 Check to see if your Pages is retrieving from the correct branch, and if it has automatic deployments enabled. 
+
 ![check settings](https://hotlink-archive-template.pages.dev/rename1/pages-branch.png)
 
 ### Can’t see your Github repository when trying to link it on Cloudflare?
+
 Check your Github applications Repository Access settings. Go to your ACCOUNT Settings > Integrations - Applications > Cloudflare > Repository Access
+
 ![cloudflare access setting](https://hotlink-archive-template.pages.dev/rename1/github-access.png)
 
 ### Index action is failing!
+
 Go back to step 3 in **Basic Setup** and check if you’ve given Actions permission to read and write.
 If that’s not the issue, check to see if you’ve set up your index.py files correctly. The folder names should correspond to the parent folders, and the create-index.py file in the outer-most folder should have the correct folder names at the VERY BOTTOM.
 
 ### How do I rename a folder (or move a file) in Github’s web UI?
+
 It isn’t possible to directly rename a folder in Github’s web UI, doing it using Git on your computer is the most foolproof way to do it. But there is a way (except for media files). 
 
 1. Go into the folder you want to rename and select a file such as “index.html” and enter the “edit” mode. 
