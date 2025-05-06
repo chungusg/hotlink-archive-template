@@ -29,6 +29,8 @@ This is an easy, barebones way to permanently host images that you don't want de
 
 The template repository uses a python Action to automatically create a "home" page with an index of all the files in the folder every time it is updated. 
 
+> NOTE: I recommend you **set your repository to Private**. Github's history feature is extensive, so if you have sensitive content or think you might want to delete something later, it will be hard to get rid of it completely once it's been committed and publicly available.
+
 <img src="https://hotlink-archive-template.pages.dev/rename1/github-use-template.webp" alt="copy template" height="200">
 
 <br/>
@@ -66,6 +68,7 @@ Very minor, but something that bugs me :)
 
 - The default settings for your Pages project should grab the files from your Github repo every time your repository is updated.
 - To add files, upload them in your Github repository in the folder you want, and COMMIT the changes.
+> Continue onto **More Setup** to 
 
 <br/>
 
@@ -74,14 +77,20 @@ Very minor, but something that bugs me :)
 ### Perform site customization/advanced setup with Github Desktop on your PC
 Github’s web UI is great, but it has major limitations. I highly recommend that you use Github Desktop during the initial setup, as well as when you want to make major organizational changes to your files/site. Once you have everything set, though, you can be like me and basically only use Github in your browser to upload whatever files you want to hotlink at the moment.
 
-- **Download Github Desktop for an easy to use graphic UI, and “clone” (download a copy of) the repository you made. Once you’re done editing, “push” (upload) all the changes you made to your online Github repository.**
+- **Download Github Desktop for an easy to use graphic UI, and “clone” (download a copy of) the repository you made.**
+- This is the best time to rename/rearrange folders + files, etc.
+	- There are other methods in the **Troubleshooting** section if you need, but this way is by far the easiest
+- Once you’re done editing, “push” (upload) all the changes you made to your online Github repository.
 
 Having some sort of text editor like Notepad++ is useful for editing any code, the automatic color-coding is very helpful. You can edit in plain old Notepad as well, it just won’t look as nice.
 
 ### About the Index Page
-The template repository uses a python Action to automatically create a "home" page with an index of ALL the files in the folder every time it is updated. 
+The template repository uses a python Action to automatically create an HTML "home" page with an index of ALL the files in the folder every time it is updated. 
+
 This is particularly convenient for mobile use, as I can upload a file, and the python action automatically updates the index page without me having to manually update anything.
+
 - If you don’t want this, just disable the “create-index” Action and delete the .py files. You can just type in the file locations to get to each file, or you can manually maintain an home/index page yourself, which isn't hard if you know some basic HTML and can remember to do it consistently.
+- Also note that if you wish to change any of the content on your index pages, you must edit the "index.py" file, not the "index.html" file as "index.html" gets re-written every time the index Action is run in order to keep the file index up to date.
 
 ### Adding/Renaming/Deleting Folders
 **Disclaimer:** This is a bit convoluted because I am extremely unqualified to be working with python OR HTML. There’s probably an easy way to do this, but I don’t have the skill to do it, and most of the stuff here is copied from stuff I found around. If you know a better way to do things, please let me know, it’d make my life easier too!
@@ -182,3 +191,5 @@ Here’s some links I think will be useful (note: I don’t use this  method, so
 Find me on [Bluesky](https://bsky.app/profile/indecisive-fangirl.bsky.social) 
 
 I'll try to answer your questions as best I can! But really, I am the most amateur of amateurs and figured this all out using Google, so I might not be of much help ^^;
+
+I also recommend [Squidge Images](https://images.squidge.org/) (an offshoot of Squidge.org) as a fairly trustworthy alternative. However, Squidge Images does have some additional obscenity rules that Squidge does not, and what crosses the line is at their discretion.
