@@ -192,7 +192,7 @@ Here’s some links I think will be useful (note: I don’t use this  method, so
 Although this guide is written with Cloudflare's Github integration in mind, particularly for easy online/mobile access, you can also keep your files locally on your PC and directly upload your assets onto your Pages project. This gives you full control over what happens to your files (keeping backups is a good idea, you can still use Github Desktop, just don't push/pull online).
 - Simply clone/download the repository as it is, customize it as you like, and upload everything to Cloudflare in a new **Pages** project (this is not an option for Workers).
 
-One thing that wil NOT work the same is the Create-Index Action that only works on Github. 
+One thing that will NOT work the same is the Create-Index Action that only works on Github. 
 - I have made a "create-index.exe" that will execute the "create-index.py" files in the exact same way as they would work with the Action. You do not have to install python for this to work (if I did everything right). Simply run "create-index.exe" whenever you make a change and want to update the "index.html" files
 - Remember, this is EXACTLY THE SAME as the index Action, meaning you have to edit each "index.py" file when you rename folders, add a folder, want to exclude a file from the index, etc. (See [Adding/Renaming Folders](https://github.com/chungusg/hotlink-archive-template/tree/main#addingrenamingdeleting-folders) for how to do this)
 
