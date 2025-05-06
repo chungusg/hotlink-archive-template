@@ -25,7 +25,7 @@ This is an easy, barebones way to permanently host images that you don't want de
 
 <br/>
 
-**2. Copy this template repository [hotlink-archive-template](https://github.com/chungusg/hotlink-archive-template) or make one from scratch**
+**2. Copy this template repository [hotlink-archive-template](https://github.com/chungusg/hotlink-archive-template)**
 
 The template repository uses a python Action to automatically create a "home" page with an index of all the files in the folder every time it is updated. 
 
