@@ -77,7 +77,7 @@ Very minor, but something that bugs me :)
 ### Perform site customization/advanced setup with Github Desktop on your PC
 Github’s web UI is great, but it has major limitations. I highly recommend that you use Github Desktop during the initial setup, as well as when you want to make major organizational changes to your files/site. Once you have everything set, though, you can be like me and basically only use Github in your browser to upload whatever files you want to hotlink at the moment.
 
-- **Download Github Desktop for an easy to use graphic UI, and “clone” (download a copy of) the repository you made.**
+- **Download Github Desktop and “clone” (download a copy of) the repository you made.**
 - This is the best time to rename/rearrange folders + files, etc.
 	- There are other methods in the **Troubleshooting** section if you need, but Github Desktop is by far the easiest way
 	- see **Adding/Renaming Folders** for important info on how to properly rename/add folders
