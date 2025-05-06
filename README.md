@@ -34,12 +34,14 @@ The template repository uses a python Action to automatically create a "home" pa
 <br/>
 
 **3. Enable Action permissions**
+
 In order for the indexing script to work, you need to give Actions permission to read and write in your repository.
 Repository settings > Actions > General > Workflow Permissions
 ![permission setting](https://hotlink-archive-template.pages.dev/rename1/github-permission.png)
 
 
 **4. Create a Cloudflare account**
+
 <img src="https://hotlink-archive-template.pages.dev/rename1/pages-signup.gif" alt="signup for cloudflare pages" height="350">
 <br/>
 
@@ -56,9 +58,11 @@ Very minor, but something that bugs me :)
 <br/>
 
 **6. Done with basic setup!**
+
 - The default settings for your Pages project should grab the files from your Github repo every time your repository is updated.
 - To add files, upload them in your Github repository in the folder you want, and COMMIT the changes.
 
+<br/>
 
 
 ## More Setup
