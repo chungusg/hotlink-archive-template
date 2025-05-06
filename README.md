@@ -41,15 +41,17 @@ Repository settings > Actions > General > Workflow Permissions
 
 ![permission setting](https://hotlink-archive-template.pages.dev/rename1/github-permission.png)
 
+<br/>
 
 **4. Create a Cloudflare account**
 
 <img src="https://hotlink-archive-template.pages.dev/rename1/pages-signup.gif" alt="signup for cloudflare pages" height="350">
+
 <br/>
 
-**5. Create a Pages project and link it to your Github repository**
+**5. Create a Pages OR Workers project and link it to your Github repository**
 
-~~Be sure to use Pages, not Workers~~ 
+Workers vs. Pages
 
 - Workers is subsuming Pages on Cloudflare and now has all the same static hosting capabilities, in addition to its original server-side processing services. 
 HOWEVER, I still recommend Pages, in the instance that you do not have your own domain AND care about what your URL looks like. 
@@ -57,6 +59,7 @@ HOWEVER, I still recommend Pages, in the instance that you do not have your own 
 e.g. For a project "MySite" your URL for Pages = *“MySite.pages.dev”*, while for Workers = *“MySite.username.workers.dev”* 
 
 Very minor, but something that bugs me :)
+
 <br/>
 
 **6. Done with basic setup!**
@@ -82,7 +85,9 @@ This is particularly convenient for mobile use, as I can upload a file, and the 
 
 ### Adding/Renaming/Deleting Folders
 **Disclaimer:** This is a bit convoluted because I am extremely unqualified to be working with python OR HTML. There’s probably an easy way to do this, but I don’t have the skill to do it, and most of the stuff here is copied from stuff I found around. If you know a better way to do things, please let me know, it’d make my life easier too!
+
 Adding or renaming folders involves some extra steps. 
+
 1. The index.py file inside the folder needs to be edited to match the parent folder name. This is found near the top of the file.
 
 ![where to change folder name](https://hotlink-archive-template.pages.dev/change-index-folder.png)
@@ -98,6 +103,7 @@ This is found at the bottom.
 
 ![enter the folder you want to exclude](https://hotlink-archive-template.pages.dev/rename1/index-exclude.png)
 
+<br/>
 
 ## Tips/Troubleshooting
 
@@ -112,11 +118,15 @@ Check to see if your Pages is retrieving from the correct branch, and if it has 
 
 ![check settings](https://hotlink-archive-template.pages.dev/rename1/pages-branch.png)
 
+<br/>
+
 ### Can’t see your Github repository when trying to link it on Cloudflare?
 
 Check your Github applications Repository Access settings. Go to your ACCOUNT Settings > Integrations - Applications > Cloudflare > Repository Access
 
 ![cloudflare access setting](https://hotlink-archive-template.pages.dev/rename1/github-access.png)
+
+<br/>
 
 ### Index action is failing!
 
@@ -136,6 +146,7 @@ You’ll have to do this to every file in the folder until they’re all in the 
 Unfortunately, *you can’t do this with media files like png/jpg/etc*, because entering the “edit” mode on a photo “breaks” it somehow, and bye-bye image :’)
 (Don’t worry if this happens, just don’t commit the change or roll it back in your history).
 
+<br/>
 
 ## Optional Steps
 
