@@ -19,13 +19,13 @@ This is an easy, barebones way to permanently host images that you don't want de
 - **Github** is a code sharing/storage platform. Your files will go here first before being published on Pages. You can edit and upload files through your browser, or through Github Desktop, a program you install on your computer. There are also limits to Github repositories, but they are also generous (5GB per repo iirc). 
 
 ## Basic Setup
-1. Create a github account
+**1. Create a github account**
 
 <img src="https://hotlink-archive-template.pages.dev/rename1/git-signup.gif" alt="sign up for github" height="350">
 
 <br/>
 
-2. Copy this template repository [hotlink-archive-template](https://github.com/chungusg/hotlink-archive-template) or make one from scratch
+**2. Copy this template repository [hotlink-archive-template](https://github.com/chungusg/hotlink-archive-template) or make one from scratch**
 
 The template repository uses a python Action to automatically create a "home" page with an index of all the files in the folder every time it is updated. 
 
@@ -33,17 +33,17 @@ The template repository uses a python Action to automatically create a "home" pa
 
 <br/>
 
-3. Enable Action permissions
+**3. Enable Action permissions**
 In order for the indexing script to work, you need to give Actions permission to read and write in your repository.
 Repository settings > Actions > General > Workflow Permissions
 ![permission setting](https://hotlink-archive-template.pages.dev/rename1/github-permission.png)
 
 
-4. Create a Cloudflare account
+**4. Create a Cloudflare account**
 <img src="https://hotlink-archive-template.pages.dev/rename1/pages-signup.gif" alt="signup for cloudflare pages" height="350">
 <br/>
 
-5. Create a Pages project and link it to your Github repository
+**5. Create a Pages project and link it to your Github repository**
 
 ~~Be sure to use Pages, not Workers~~ 
 
@@ -53,8 +53,9 @@ HOWEVER, I still recommend Pages, in the instance that you do not have your own 
 e.g. For a project "MySite" your URL for Pages = *“MySite.pages.dev”*, while for Workers = *“MySite.username.workers.dev”* 
 
 Very minor, but something that bugs me :)
+<br/>
 
-6. Done with basic setup!
+**6. Done with basic setup!**
 - The default settings for your Pages project should grab the files from your Github repo every time your repository is updated.
 - To add files, upload them in your Github repository in the folder you want, and COMMIT the changes.
 
