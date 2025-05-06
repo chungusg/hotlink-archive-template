@@ -124,7 +124,7 @@ You can play with cloudflare and github to make deployment of your site complete
 #### Semi-Manual
 You could do a semi-automatic deployment, with a "Production" branch on your github that is separate from the branch you edit. This creates an extra step before anything is published on Cloudflare. A safeguard against accidental changes/deletion of sorts :)
 
-<img src="https://hotlink-archive-template.pages.dev/rename1/pages-settings.gif" alt="navigate to settings on cloudflare" height="100">
+<img src="https://hotlink-archive-template.pages.dev/rename1/pages-settings.gif" alt="navigate to settings on cloudflare" height="100px">
 
 1. Go to Settings
 2. Choose Production build branch (MAIN or CLOUDFLARE) and enable (or disable) automatic deployments
