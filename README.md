@@ -7,19 +7,19 @@ See the demo site made from this template IN ACTION: https://hotlink-archive-tem
 
 I've encountered far too many dead links in fanfics and forums simply because a hosting service decided to dump older files, or they decided to change their TOS to no longer allow hotlinking or certain kinds of content (nsfw, fictional graphic content). See **Optional Steps** for even more options.
 
-This is an easy, barebones way to permanently host images that you don't want deleted unexpectedly or that you can't host elsewhere. (Emphasis on barebones. This will not be a nice portfolio style site. Unless you decide to code that yourself!)
+This is an easy, barebones way to permanently host images that you don't want deleted unexpectedly or that you can't host elsewhere. (Emphasis on barebones. This will not be a nice portfolio style site. Unless you decide to code that yourself!) You can follow the link above for an example of this type of site.
 
-*It is also EASY to upload and use on mobile devices after initial setup!*
+**It is also EASY to upload and use on mobile devices after initial setup!**
 
 
 ### Tools you will need:
 
-- **Cloudflare Pages/Workers** is a free to use static page hosting service. This will publish your files and make them available online. There are limits to it, but honestly they are so large that you should just pay for proper hosting if you go over them.
+- **Cloudflare Pages/Workers** is a free to use static site hosting service. This will publish your files and make them available online. This will publish your files and make them available online. There is a limit to the amount of data you can upload for free, but you can pay for proper hosting if you want to exceed it.
 
-- **Github** is a code sharing/storage platform. Your files will go here first before being published on Pages. You can edit and upload files through your browser, or through Github Desktop, a program you install on your computer. There are also limits to Github repositories, but they are also generous (5GB per repo iirc). 
+- **Github** is a code sharing/storage platform. Your files will go here first before being published on Pages. You can edit and upload files through your browser at github.com, or through Github Desktop, a program you install on your computer. There are limits to Github repositories, but they are also generous (suggested 1GB to 5GB per repo). 
 
 ## Basic Setup
-**1. Create a github account**
+**1. Create a [github](https://github.com/signup) account**
 
 <img src="https://hotlink-archive-template.pages.dev/rename1/git-signup.gif" alt="sign up for github" height="350">
 
@@ -27,7 +27,9 @@ This is an easy, barebones way to permanently host images that you don't want de
 
 **2. Copy this template repository [hotlink-archive-template](https://github.com/chungusg/hotlink-archive-template)**
 
-The template repository uses a python Action to automatically create a "home" page with an index of all the files in the folder every time it is updated. 
+Your website will be contained in a [repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories), a place where all the files and the revision history for your project are stored. 
+
+This template repository uses an "Action" (using python) to automatically create a "home" page with an index of all the files in your repository every time it is updated. 
 
 > NOTE: I recommend you **set your repository to Private**. Github's history feature is extensive, so if you have sensitive content or think you might want to delete something later, it will be hard to get rid of it completely once it's been committed and publicly available.
 
@@ -37,38 +39,57 @@ The template repository uses a python Action to automatically create a "home" pa
 
 **3. Enable Action permissions**
 
-In order for the indexing script to work, you need to give Actions permission to read and write in your repository.
+In order for the Action script to work, you need to give Actions permission to read and write in your repository.
 
-Repository settings > Actions > General > Workflow Permissions
+Within your repository, go to the tab Settings > Actions > General > Workflow Permissions
 
 ![permission setting](https://hotlink-archive-template.pages.dev/rename1/github-permission.png)
 
 <br/>
 
-**4. Create a Cloudflare account**
+**4. Create a [Cloudflare](https://dash.cloudflare.com/sign-up/workers-and-pages) account**
 
 <img src="https://hotlink-archive-template.pages.dev/rename1/pages-signup.gif" alt="signup for cloudflare pages" height="350">
 
 <br/>
 
-**5. Create a Pages OR Workers project and link it to your Github repository**
+**5. Create a Pages (or Workers) project and link it to your Github repository**
+
+Your Pages project will create the front end of the site where the images will be displayed. You will be able to link those images to other platforms like AO3.
+
+You can create either a Workers or Pages project by going to Add > Pages (or Workers).
 
 Workers vs. Pages
 
-- Workers is subsuming Pages on Cloudflare and now has all the same static hosting capabilities, in addition to its original server-side processing services. 
-HOWEVER, I still recommend Pages, in the instance that you do not have your own domain AND care about what your URL looks like. 
+- Workers is subsuming Pages on Cloudflare and now has all the same static hosting capabilities, in addition to its original server-side processing services. If you'd like to, [read more about this.](https://blog.cloudflare.com/pages-and-workers-are-converging-into-one-experience/#more-on-the-why)
 
-e.g. For a project "MySite" your URL for Pages = *“MySite.pages.dev”*, while for Workers = *“MySite.username.workers.dev”* 
+- While Workers has similar capabilities, **I recommend Pages for this project**. Pages has the added bonus of a cleaner URL if you do not have your own domain: “MySite.pages.dev” in Pages vs Workers' “MySite.username.workers.dev”
 
-Very minor, but something that bugs me :)
+You will be prompted to import an existing Git repository. You will need to give it access to your Github to do this.
+
+<img src="https://hotlink-archive-template.pages.dev/rename1/pages-import-git.png" alt="import github repository" height="350">
+
+Select the repository on your Github you made for your project, then hit "Begin Setup". 
+- You do not need to change any settings on the next page, so hit "Save and Deploy". Your image hosting site will now be live!
+- The URL will be "repositoryname.pages.dev". It may take a few minutes to become accessible.
+
+**Now you're done with the basic setup!**
 
 <br/>
 
-**6. Done with basic setup!**
+### How to Add files
+You can add any files you want to link to on AO3 through **mobile, desktop browser, or the Github desktop program**!
 
-- The default settings for your Pages project should grab the files from your Github repo every time your repository is updated.
-- To add files, upload them in your Github repository in the folder you want, and COMMIT the changes.
-> Continue onto **More Setup** to customize your site
+Here is how to do it on Github.com:
+- Open up the repository that you made (it can be found at github.com/username/repositoryname). You will see a list of folders and files that are in that repository.
+- Click into the folder "fan-stuff".
+- In the top right, go Add file > Upload files and drag in the images you want added. You will need to name the images BEFORE you upload them, as there is not an easy renaming feature within Github's browser interface.
+- In the Commit changes box, choose a title for what action you are doing. This will help you backtrack uploads if needed. 
+	- For example, it could be "Uploaded Batman Art". Make sure it's set to "commit directly to the main branch", then commit those changes. This will upload the files.
+
+Now, if you visit your site, you will see your uploaded image under the "fan-stuff" folder!
+
+**Continue onto *More Setup* to customize your site and implement more advanced settings**
 
 <br/>
 
