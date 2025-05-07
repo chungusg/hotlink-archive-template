@@ -199,10 +199,10 @@ You could do a semi-automatic deployment, with a "Production" branch on your git
 
 <img src="https://hotlink-archive-template.pages.dev/rename1/pages-settings.gif" alt="navigate to settings on cloudflare">
 
-1. Go to Settings
-2. Choose Production build branch (MAIN or CLOUDFLARE) and enable (or disable) automatic deployments
+1. Go to Settings > Build tab > Branch Control
+2. Choose your Production Branch (MAIN or CLOUDFLARE) and enable (or disable) automatic deployments
 - If you choose MAIN, every change you commit to MAIN will be published to Pages
-- If you choose CLOUDFLARE, you will have to manually pull any changes from MAIN to CLOUDFLARE first before anything is published to Pages
+- If you choose CLOUDFLARE, any changes you make to MAIN will not show up on your Pages site until you Pull from MAIN to CLOUDFLARE 
 	- Or you can do it the other way, by editing on a side branch and only merging with MAIN when you want to publish.
 
 #### Fully Manual
@@ -219,7 +219,7 @@ Here’s some links I think will be useful (note: I don’t use this  method, so
 <br/>
 
 ### Storing Locally instead of on Github
-Although this guide is written with Cloudflare's Github integration in mind, particularly for easy online/mobile access, you can also keep your files locally on your PC and directly upload your assets onto your Pages project. This gives you full control over what happens to your files (keeping backups is a good idea, you can still use Github Desktop, just don't push/pull online).
+Although this guide is written with Cloudflare's Github integration in mind, particularly for easy online/mobile access, you can also keep your files locally on your PC and directly upload your assets onto your Pages project. This gives you full control over what happens to your files. (Keeping backups is a good idea. You can still use Github Desktop to do this, just keep your repository on your PC.)
 - Simply clone/download the repository as it is, customize it as you like, and upload everything to Cloudflare in a new **Pages** project (this is not an option for Workers).
 
 One thing that will NOT work the same is the "create-index" Action that only works on Github. 
