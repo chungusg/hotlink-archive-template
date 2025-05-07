@@ -29,7 +29,7 @@ This is an easy, barebones way to permanently host images that you don't want de
 
 Your website will be contained in a [repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories), a place where all the files and the revision history for your project are stored. 
 
-This template repository uses an "Action" (using python) to automatically create a "home" page with an index of all the files in your repository every time it is updated. 
+This template repository uses an "Action" (using python) to automatically create a "home" page with an Index of all the files in your repository every time it is updated. 
 
 > NOTE: I recommend you **set your repository to Private**. Github's history feature is extensive, so if you have sensitive content or think you might want to delete something later, it will be hard to get rid of it completely once it's been committed and publicly available.
 
@@ -57,7 +57,7 @@ Within your repository, go to the tab Settings > Actions > General > Workflow Pe
 
 Your Pages project will create the front end of the site where the images will be displayed. You will be able to link those images to other platforms like AO3.
 
-You can create either a Workers or Pages project by going to Add > Pages (or Workers).
+You can create either a Workers or Pages project by going to Add > Pages (or Workers). **Name your project WISELY! This name will be your site's URL.**
 
 Workers vs. Pages
 
@@ -70,15 +70,14 @@ You will be prompted to import an existing Git repository. You will need to give
 <img src="https://hotlink-archive-template.pages.dev/rename1/pages-import-git.png" alt="import github repository" height="350">
 
 Select the repository on your Github you made for your project, then hit "Begin Setup". 
+- **Name your project WISELY! This name will be your site's URL.**
 - You do not need to change any settings on the next page, so hit "Save and Deploy". Your image hosting site will now be live!
-- The URL will be "repositoryname.pages.dev". It may take a few minutes to become accessible.
+- The URL will be "https://ProjectName.pages.dev". It may take a few minutes to become accessible.
 
 **Now you're done with the basic setup!**
 
-<br/>
-
 ### How to Add files
-You can add any files you want to link to on AO3 through **mobile, desktop browser, or the Github desktop program**!
+You can add any files you want to link to on AO3/elsewhere through **mobile, desktop browser, or the Github desktop program**!
 
 Here is how to do it on Github.com:
 - Open up the repository that you made (it can be found at github.com/username/repositoryname). You will see a list of folders and files that are in that repository.
@@ -89,60 +88,70 @@ Here is how to do it on Github.com:
 
 Now, if you visit your site, you will see your uploaded image under the "fan-stuff" folder!
 
-**Continue onto *More Setup* to customize your site and implement more advanced settings**
+**Continue onto *More Setup* to customize your site and implement more advanced settings. See *Tips/Troubleshooting* if you're running into problems.**
 
 <br/>
 
 
 ## More Setup
 ### Perform site customization/advanced setup with Github Desktop on your PC
-Github’s web UI is great, but it has major limitations. I highly recommend that you use Github Desktop during the initial setup, as well as when you want to make major organizational changes to your files/site. Once you have everything set, though, you can be like me and basically only use Github in your browser to upload whatever files you want to hotlink at the moment.
+Github’s web UI is great, but it has major limitations. I highly recommend that you use Github Desktop during the initial setup, as well as when you want to make major organizational changes to your files/site. Once you have everything set, though, you can use Github in your browser to upload whatever files you want to hotlink at the moment.
 
 - **Download Github Desktop and “clone” (download a copy of) the repository you made.**
 - This is the best time to rename/rearrange folders + files, etc.
 	- There are other methods in the **Troubleshooting** section if you need, but Github Desktop is by far the easiest way
 	- see **Adding/Renaming Folders** for important info on how to properly rename/add folders
-	- see **About the Index Page** for how to customize your index pages
+	- see **About the Index Page** for how to customize your Index pages
 - Once you’re done editing, “push” (upload) all the changes you made to your online Github repository.
 
 Having some sort of text editor like Notepad++ is useful for editing any code, the automatic color-coding is very helpful. You can edit in plain old Notepad as well, it just won’t look as nice.
 
 ### About the Index Page
-The template repository uses a python Action to automatically create an HTML "home" page with an index of ALL the files in the folder every time it is updated. 
+The template repository uses a python Action to automatically create an HTML "home" page with an Index of ALL the files in the folder every time it is updated. 
 
-This is particularly convenient for mobile use, as I can upload a file, and the python action automatically updates the index page without me having to manually update anything.
+This is particularly convenient for mobile use, as you can upload a file, and the python action automatically updates the Index page.
 
-- If you don’t want this, just disable the “create-index” Action and delete the .py files. You can just type in the file locations to get to each file, or you can manually maintain an home/index page yourself, which isn't hard if you know some basic HTML and can remember to do it consistently.
-- Also note that if you wish to change any of the content on your index pages, you must edit the "index.py" file, not the "index.html" file as "index.html" gets re-written every time the index Action is run in order to keep the file index up to date.
+- If you don’t want this, just disable the “create-index” Action and delete the .py files. You can just type in the file locations to get to each file, or you can manually maintain an home/Index page yourself, which isn't hard if you know some basic HTML and can remember to do it consistently.
+- Also note that if you wish to change any of the content on your Index pages, you must edit the "index.py" file, not the "index.html" file. The "index.html" file gets re-written every time the "create-index" Action is run in order to keep the file index up to date.
 
 ### Adding/Renaming/Deleting Folders
-**Disclaimer:** This is a bit convoluted because I am extremely unqualified to be working with python OR HTML. There’s probably an easy way to do this, but I don’t have the skill to do it, and most of the stuff here is copied from stuff I found around. If you know a better way to do things, please let me know, it’d make my life easier too!
+> **Disclaimer:** This is a bit convoluted because I am extremely unqualified to be working with python OR HTML. There’s probably an easy way to do this, but I don’t have the skill to do it, and most of the stuff here is copied from stuff I found around. If you know a better way to do things, please let me know, it’d make my life easier too!
 
 Adding or renaming folders involves some extra steps. 
 
-1. The "index.py" file inside the folder needs to be edited to match the parent folder name. This is found near the top of the file.
+**1. The "index.py" file inside the folder needs to be edited to match the parent folder name.**
+
+The place you need to do this is found near the top of the file (highlighted below)
 
 ![where to change folder name](https://hotlink-archive-template.pages.dev/change-index-folder.png)
 
 
-2. Then the outer-most "create-index.py" file needs to be updated to match the new name as well. If you’ve added a new folder, duplicate and adjust the code to match. 
-This is found at the bottom.
+**2. Then the outer-most "create-index.py" file needs to be updated to match the new name as well. If you’ve added a new folder, duplicate and adjust the code to match.** 
+
+The place you need to do this is found at the bottom (highlighted below)
 
 ![where to edit](https://hotlink-archive-template.pages.dev/create-index.png)
 
 - If you don’t need any folders at all, great! Just delete them and their contents! No need to edit any files. (Don’t delete “index.html” or “create-index.py” or “.github/workflows”!)
-- If you would like to have these folders for later use, leave them as-is and simply delete/comment out (using # at the beginning of a line will make it “invisible” to the computer) the relevant lines of code at the bottom of "create-index.py" like in the previous step for renaming folders.  Also, add the folder’s name to the “exclusions” list at the top of the "create-index.py" file so that it doesn’t show up on your index page.
+- If you would like to have these folders for later use, leave them as-is and simply edit the index files.
+	- The relevant lines of code at the bottom of "create-index.py" like in the previous step for renaming folders. You may delete this code, or comment it out (using # at the beginning of a line will make it “invisible” to the computer)
+ 	- Then, add the folder’s name to the “exclusions” list at the top of the "create-index.py" file so that it doesn’t show up on your Index page (highlighted below)
 
 ![enter the folder you want to exclude](https://hotlink-archive-template.pages.dev/rename1/index-exclude.png)
 
+<br/>
+
+- You can also use this same concept to create "invisible" files/folders. Any files/folders included in the "exclusions" list in "(create-)index.py" will not be listed on the Index page, however they can still be found through the direct URL to the file.
+	- On the flipside, this means simply hiding the file/folder from the Index page does not get rid of the file from your site. Anyone who has the URL will be able to find that file unless you remove it, or move its location to change the URL
 <br/>
 
 ## Tips/Troubleshooting
 
 
 ### (Re)name your files before uploading
-It’s not possible to rename image/media files on Github’s web UI (it is possible with the local Git program). The INDEX action lists out the names of your files exactly, so you will end up with ugly strings of numbers and letters on your index page, which is terrible to look at and also plain old CONFUSING to navigate.
-So if you're uploading on mobile or through the Web UI, name your files with easy to remember and distinctive filenames before you go ahead and upload them. This makes everything much easier, and it makes your index look nice :)
+It’s not possible to rename image/media files on Github’s web UI (it is possible with the local Git program). The "create-index" Action lists out the names of your files exactly, so you will end up with ugly strings of numbers and letters on your Index page if you don't rename them, which is terrible to look at and also plain old CONFUSING to navigate.
+
+So if you're uploading on mobile or through Github on browser, name your files with easy to remember and distinctive filenames before you go ahead and upload them. This makes everything much easier, and it makes your Index page look nice :)
 
 ### My website isn’t updating when I edit my Github repository!
 
@@ -190,10 +199,10 @@ You could do a semi-automatic deployment, with a "Production" branch on your git
 
 <img src="https://hotlink-archive-template.pages.dev/rename1/pages-settings.gif" alt="navigate to settings on cloudflare">
 
-1. Go to Settings
-2. Choose Production build branch (MAIN or CLOUDFLARE) and enable (or disable) automatic deployments
+1. Go to Settings > Build tab > Branch Control
+2. Choose your Production Branch (MAIN or CLOUDFLARE) and enable (or disable) automatic deployments
 - If you choose MAIN, every change you commit to MAIN will be published to Pages
-- If you choose CLOUDFLARE, you will have to manually pull any changes from MAIN to CLOUDFLARE first before anything is published to Pages
+- If you choose CLOUDFLARE, any changes you make to MAIN will not show up on your Pages site until you Pull from MAIN to CLOUDFLARE 
 	- Or you can do it the other way, by editing on a side branch and only merging with MAIN when you want to publish.
 
 #### Fully Manual
@@ -210,12 +219,12 @@ Here’s some links I think will be useful (note: I don’t use this  method, so
 <br/>
 
 ### Storing Locally instead of on Github
-Although this guide is written with Cloudflare's Github integration in mind, particularly for easy online/mobile access, you can also keep your files locally on your PC and directly upload your assets onto your Pages project. This gives you full control over what happens to your files (keeping backups is a good idea, you can still use Github Desktop, just don't push/pull online).
+Although this guide is written with Cloudflare's Github integration in mind, particularly for easy online/mobile access, you can also keep your files locally on your PC and directly upload your assets onto your Pages project. This gives you full control over what happens to your files. (Keeping backups is a good idea. You can still use Github Desktop to do this, just keep your repository on your PC.)
 - Simply clone/download the repository as it is, customize it as you like, and upload everything to Cloudflare in a new **Pages** project (this is not an option for Workers).
 
-One thing that will NOT work the same is the Create-Index Action that only works on Github. 
+One thing that will NOT work the same is the "create-index" Action that only works on Github. 
 - I have made a "create-index.exe" that will execute the "create-index.py" files in the exact same way as they would work with the Action. You do not have to install python for this to work (if I did everything right). Simply run "create-index.exe" whenever you make a change and want to update the "index.html" files
-- Remember, this is EXACTLY THE SAME as the index Action, meaning you have to edit each "index.py" file when you rename folders, add a folder, want to exclude a file from the index, etc. (See [Adding/Renaming Folders](https://github.com/chungusg/hotlink-archive-template/tree/main#addingrenamingdeleting-folders) for how to do this)
+- Remember, this is EXACTLY THE SAME as the "create-index" Action, meaning you have to edit each "index.py" file when you rename folders, add a folder, want to exclude a file from the Index page, etc. (See [Adding/Renaming Folders](https://github.com/chungusg/hotlink-archive-template/tree/main#addingrenamingdeleting-folders) for how to do this)
 
 <br/>
 
