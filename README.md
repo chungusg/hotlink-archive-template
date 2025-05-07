@@ -203,7 +203,7 @@ You could do a semi-automatic deployment, with a "Production" branch on your git
 2. Choose your Production Branch (MAIN or CLOUDFLARE) and enable (or disable) automatic deployments
 - If you choose MAIN, every change you commit to MAIN will be published to Pages
 - If you choose CLOUDFLARE, any changes you make to MAIN will not show up on your Pages site until you Pull from MAIN to CLOUDFLARE 
-	- To Pull changes from Main to Cloudflare, go to your github repository
+	- To Pull changes from MAIN to CLOUDFLARE, go to your github repository
 	- Above your files on the Left, you will see a toggle to choose which branch you are on.
 	- Choose Cloudflare. There will be a message like "This branch is 7 commits ahead of, 2 commits behind main." Click "2 commits behind"
 	- Click "Create a Pull Request". Then click "Merge Pull Request". If everything is correct, this should trigger a build on your Cloudflare
