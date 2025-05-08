@@ -111,6 +111,8 @@ Github’s web UI is great, but it has major limitations. I highly recommend tha
 
 Having some sort of text editor like Notepad++ is useful for editing any code, the automatic color-coding is very helpful. You can edit in plain old Notepad as well, it just won’t look as nice.
 
+<br/>
+
 ### About the Index Page
 The template repository uses a python Action to automatically create an HTML "home" page with an Index of ALL the files in the folder every time it is updated. 
 
@@ -118,6 +120,8 @@ This is particularly convenient for mobile use, as you can upload a file, and th
 
 - If you don’t want this, just disable the “create-index” Action and delete the .py files. You can just type in the file locations to get to each file, or you can manually maintain an home/Index page yourself, which isn't hard if you know some basic HTML and can remember to do it consistently.
 - Also note that if you wish to change any of the content on your Index pages, you must edit the "index.py" file, not the "index.html" file. The "index.html" file gets re-written every time the "create-index" Action is run in order to keep the file index up to date.
+
+<br/>
 
 ### Adding/Renaming/Deleting Folders
 > **Disclaimer:** This is a bit convoluted because I am extremely unqualified to be working with python OR HTML. There’s probably an easy way to do this, but I don’t have the skill to do it, and most of the stuff here is copied from stuff I found around. If you know a better way to do things, please let me know, it’d make my life easier too!
@@ -158,6 +162,8 @@ It’s not possible to rename image/media files on Github’s web UI (it is poss
 
 So if you're uploading on mobile or through Github on browser, name your files with easy to remember and distinctive filenames before you go ahead and upload them. This makes everything much easier, and it makes your Index page look nice :)
 
+<br/>
+
 ### My website isn’t updating when I edit my Github repository!
 
 Check to see if your Pages is retrieving from the correct branch, and if it has automatic deployments enabled. 
@@ -178,6 +184,7 @@ Check your Github applications Repository Access settings. Go to your ACCOUNT Se
 
 Go back to step 3 in **Basic Setup** and check if you’ve given Actions permission to read and write.
 If that’s not the issue, check to see if you’ve set up your "index.py" files correctly. The folder names should correspond to the parent folders, and the "create-index.py" file in the outer-most folder should have the correct folder names at the VERY BOTTOM.
+
 <br/>
 
 ### How do I rename a folder (or move a file) in Github’s web UI?
@@ -197,10 +204,10 @@ Unfortunately, *you can’t do this with media files like png/jpg/etc*, because 
 
 ## Optional Steps
 
-### Make deployment (fully or semi-)Manual
-You can play with cloudflare and github to make deployment of your site completely manual. This is a safeguard in case you accidentally make a change or delete something from your github, it won't affect your website.
-#### Semi-Manual
-You could do a semi-automatic deployment, with a "Production" branch on your github that is separate from the branch you edit. This creates an extra step before anything is published on Cloudflare. A safeguard against accidental changes/deletion of sorts :)
+### Make deployment (semi-)Manual
+You can play with cloudflare and github to make deployment of your site a manual step you have to trigger, instead of automatic with each commit (default setting). This is a safeguard in case you accidentally make a change or delete something from your github, it won't affect your website.
+#### Deploy w/ Branches
+You could do a semi-automatic deployment with a "Production" branch on your github that is separate from the branch you edit. This creates an extra step before anything is published on Cloudflare. A safeguard against accidental changes/deletion of sorts :)
 
 <img src="https://hotlink-archive-template.pages.dev/rename1/pages-settings.gif" alt="navigate to settings on cloudflare">
 
@@ -213,7 +220,7 @@ You could do a semi-automatic deployment, with a "Production" branch on your git
 	- Choose Cloudflare. There will be a message like "This branch is 7 commits ahead of, 2 commits behind main." Click "2 commits behind"
 	- Click "Create a Pull Request". Then click "Merge Pull Request". If everything is correct, this should trigger a build on your Cloudflare
 
-#### Fully Manual
+#### Deploy w/ Github Actions
 Or you can create a manual command that you have to enter on github to trigger a deployment on cloudflare. I'd say if you're paranoid about anything happening to your site for any number of reasons, this is the safest choice. Unless you manually trigger the command, your Pages site will be completely untouched.
 
 This can be done in many ways, I think the most straightforward is with [Deploy Hooks](https://developers.cloudflare.com/pages/configuration/deploy-hooks) (maybe in conjunction with Actions if you want to make it mobile-friendly), and might be a bit complicated, but not too hard to figure out with some Google-fu. 
