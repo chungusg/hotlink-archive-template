@@ -88,6 +88,11 @@ Here is how to do it on Github.com:
 
 Now, if you visit your site, you will see your uploaded image under the "fan-stuff" folder!
 
+> To embed/link your image, navigate to your file on your Pages site and copy the URL in the address bar. This URL is what you will use to embed your photo (using HTML or "add image as URL" tools some sites have).
+
+<br/>
+
+
 **Continue onto *More Setup* to customize your site and implement more advanced settings. See *Tips/Troubleshooting* if you're running into problems.**
 
 <br/>
