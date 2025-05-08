@@ -221,7 +221,7 @@ You could do a semi-automatic deployment with a "Production" branch on your gith
 	- Click "Create a Pull Request". Then click "Merge Pull Request". If everything is correct, this should trigger a build on your Cloudflare
 
 #### Deploy w/ Github Actions
-Or you can create a manual command that you have to enter on github to trigger a deployment on cloudflare. I'd say if you're paranoid about anything happening to your site for any number of reasons, this is the safest choice. Unless you manually trigger the command, your Pages site will be completely untouched.
+Or you can create a manual command that you have to enter on github to trigger a deployment on cloudflare. If you're paranoid about anything happening to your site due to a mishap on the Github side, this is a safe choice. Unless you manually trigger the command, your Pages site will be completely untouched no matter if something happens to your repo.
 
 This can be done in many ways, I think the most straightforward is with [Deploy Hooks](https://developers.cloudflare.com/pages/configuration/deploy-hooks) (maybe in conjunction with Actions if you want to make it mobile-friendly), and might be a bit complicated, but not too hard to figure out with some Google-fu. 
 
