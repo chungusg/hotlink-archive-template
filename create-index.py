@@ -14,7 +14,7 @@ caption_dict = {
 ## -------- EXCLUSIONS ----------
 
 ## folders you want to exclude from indexing
-exclude_dir = {'.git','.github'}
+exclude_dir = {'.git','.github', 'extra-folder'}
 	## DO NOT remove .git or .github from this exclusion list, or bad things will happen
 
 ## files you want to exclude from indexing
