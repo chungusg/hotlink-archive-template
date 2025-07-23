@@ -5,16 +5,18 @@ See the demo site made from this template IN ACTION: https://hotlink-archive-tem
 
 **This guide is for an easy way to host files for hotlinking on AO3 or elsewhere, using github and cloudflare pages.**
 
-I've encountered far too many dead links in fanfics and forums simply because a hosting service decided to dump older files, or they decided to change their TOS to no longer allow hotlinking or certain kinds of content (nsfw, fictional graphic content). See **Optional Steps** for even more options.
+I've encountered far too many dead links in fanfics and forums simply because a hosting service decided to dump older files, or they decided to change their TOS to no longer allow hotlinking or certain kinds of content (nsfw, fictional graphic content). 
 
 This is an easy, barebones way to permanently host images that you don't want deleted unexpectedly or that you can't host elsewhere. (Emphasis on barebones. This will not be a nice portfolio style site. Unless you decide to code that yourself!) You can follow the link above for an example of this type of site.
 
 **It is also EASY to upload and use on mobile devices after initial setup!**
 
+See **Optional Steps** for even more custom options, such as hosting on PC instead of github.
+
 
 ### Tools you will need:
 
-- **Cloudflare Pages/Workers** is a free to use static site hosting service. This will publish your files and make them available online. This will publish your files and make them available online. There is a limit to the amount of data you can upload for free, but you can pay for proper hosting if you want to exceed it.
+- **Cloudflare Pages** is a free to use static site hosting service. This will publish your files and make them available online. This will publish your files and make them available online. There is a limit to the amount of data you can upload for free, but you can pay for proper hosting if you want to exceed it.
 
 - **Github** is a code sharing/storage platform. Your files will go here first before being published on Pages. You can edit and upload files through your browser at github.com, or through Github Desktop, a program you install on your computer. There are limits to Github repositories, but they are also generous (suggested 1GB to 5GB per repo). 
 
@@ -53,17 +55,11 @@ Within your repository, go to the tab Settings > Actions > General > Workflow Pe
 
 <br/>
 
-**5. Create a Pages (or Workers) project and link it to your Github repository**
+**5. Create a Pages project and link it to your Github repository**
 
 Your Pages project will create the front end of the site where the images will be displayed. You will be able to link those images to other platforms like AO3.
 
-You can create either a Workers or Pages project by going to Add > Pages (or Workers). **Name your project WISELY! This name will be your site's URL.**
-
-Workers vs. Pages
-
-- Workers is subsuming Pages on Cloudflare and now has all the same static hosting capabilities, in addition to its original server-side processing services. If you'd like to, [read more about this.](https://blog.cloudflare.com/pages-and-workers-are-converging-into-one-experience/#more-on-the-why)
-
-- While Workers has similar capabilities, **I recommend Pages for this project**. Pages has the added bonus of a cleaner URL if you do not have your own domain: “MySite.pages.dev” in Pages vs Workers' “MySite.username.workers.dev”
+You can create a Pages project by going to Add > Pages. **Name your project WISELY! This name will be your site's URL.**
 
 You will be prompted to import an existing Git repository. You will need to give it access to your Github to do this.
 
@@ -88,6 +84,11 @@ Here is how to do it on Github.com:
 
 Now, if you visit your site, you will see your uploaded image under the "fan-stuff" folder!
 
+> To embed/link your image, navigate to your file on your Pages site and copy the URL in the address bar. This URL is what you will use to embed your photo (using HTML or "add image as URL" tools some sites have).
+
+<br/>
+
+
 **Continue onto *More Setup* to customize your site and implement more advanced settings. See *Tips/Troubleshooting* if you're running into problems.**
 
 <br/>
@@ -106,43 +107,30 @@ Github’s web UI is great, but it has major limitations. I highly recommend tha
 
 Having some sort of text editor like Notepad++ is useful for editing any code, the automatic color-coding is very helpful. You can edit in plain old Notepad as well, it just won’t look as nice.
 
+<br/>
+
 ### About the Index Page
 The template repository uses a python Action to automatically create an HTML "home" page with an Index of ALL the files in the folder every time it is updated. 
 
 This is particularly convenient for mobile use, as you can upload a file, and the python action automatically updates the Index page.
 
-- If you don’t want this, just disable the “create-index” Action and delete the .py files. You can just type in the file locations to get to each file, or you can manually maintain an home/Index page yourself, which isn't hard if you know some basic HTML and can remember to do it consistently.
-- Also note that if you wish to change any of the content on your Index pages, you must edit the "index.py" file, not the "index.html" file. The "index.html" file gets re-written every time the "create-index" Action is run in order to keep the file index up to date.
+- Note that if you wish to change any of the content on your Index pages, you must edit the "create-index.py" file, not the "index.html" file. The "index.html" file gets re-written every time the "create-index" Action is run in order to keep the file index up to date.
+- If you don’t want this to automatically generate, just disable the “create-index” Action and delete the .py files. You can just type in the direct address to get to each file, or you can manually maintain an home/Index page yourself.
 
-### Adding/Renaming/Deleting Folders
-> **Disclaimer:** This is a bit convoluted because I am extremely unqualified to be working with python OR HTML. There’s probably an easy way to do this, but I don’t have the skill to do it, and most of the stuff here is copied from stuff I found around. If you know a better way to do things, please let me know, it’d make my life easier too!
-
-Adding or renaming folders involves some extra steps. 
-
-**1. The "index.py" file inside the folder needs to be edited to match the parent folder name.**
-
-The place you need to do this is found near the top of the file (highlighted below)
-
-![where to change folder name](https://hotlink-archive-template.pages.dev/change-index-folder.png)
-
-
-**2. Then the outer-most "create-index.py" file needs to be updated to match the new name as well. If you’ve added a new folder, duplicate and adjust the code to match.** 
-
-The place you need to do this is found at the bottom (highlighted below)
-
-![where to edit](https://hotlink-archive-template.pages.dev/create-index.png)
-
-- If you don’t need any folders at all, great! Just delete them and their contents! No need to edit any files. (Don’t delete “index.html” or “create-index.py” or “.github/workflows”!)
-- If you would like to have these folders for later use, leave them as-is and simply edit the index files.
-	- The relevant lines of code at the bottom of "create-index.py" like in the previous step for renaming folders. You may delete this code, or comment it out (using # at the beginning of a line will make it “invisible” to the computer)
- 	- Then, add the folder’s name to the “exclusions” list at the top of the "create-index.py" file so that it doesn’t show up on your Index page (highlighted below)
-
-![enter the folder you want to exclude](https://hotlink-archive-template.pages.dev/rename1/index-exclude.png)
 
 <br/>
 
-- You can also use this same concept to create "invisible" files/folders. Any files/folders included in the "exclusions" list in "(create-)index.py" will not be listed on the Index page, however they can still be found through the direct URL to the file.
+### Hiding Files/Folders
+-  Feel free to delete files and folders you don't need, but be careful not to delete anything important (Don’t delete “index.html” or “create-index.py” or “.github/workflows”!)
+- You can hide files and even entire folders without deleting them! This will create "invisible" files/folders. Any files/folders included in the "exclusions" list in "create-index.py" will not be listed on the Index page, however they can still be found through the direct URL to the file.
 	- On the flipside, this means simply hiding the file/folder from the Index page does not get rid of the file from your site. Anyone who has the URL will be able to find that file unless you remove it, or move its location to change the URL
+  
+ **Add the folder or file name to the “exclusions” list at the top of the "create-index.py" file so that it doesn’t show up on your Index page (highlighted below)**
+
+![enter the folder you want to exclude](https://hotlink-archive-template.pages.dev/rename1/index-exclude.png)
+
+
+
 <br/>
 
 ## Tips/Troubleshooting
@@ -152,6 +140,8 @@ The place you need to do this is found at the bottom (highlighted below)
 It’s not possible to rename image/media files on Github’s web UI (it is possible with the local Git program). The "create-index" Action lists out the names of your files exactly, so you will end up with ugly strings of numbers and letters on your Index page if you don't rename them, which is terrible to look at and also plain old CONFUSING to navigate.
 
 So if you're uploading on mobile or through Github on browser, name your files with easy to remember and distinctive filenames before you go ahead and upload them. This makes everything much easier, and it makes your Index page look nice :)
+
+<br/>
 
 ### My website isn’t updating when I edit my Github repository!
 
@@ -172,7 +162,7 @@ Check your Github applications Repository Access settings. Go to your ACCOUNT Se
 ### Index action is failing!
 
 Go back to step 3 in **Basic Setup** and check if you’ve given Actions permission to read and write.
-If that’s not the issue, check to see if you’ve set up your "index.py" files correctly. The folder names should correspond to the parent folders, and the "create-index.py" file in the outer-most folder should have the correct folder names at the VERY BOTTOM.
+If that’s not the issue, Go into your Action History and check the error message to find the specific problem.
 <br/>
 
 ### How do I rename a folder (or move a file) in Github’s web UI?
@@ -192,10 +182,20 @@ Unfortunately, *you can’t do this with media files like png/jpg/etc*, because 
 
 ## Optional Steps
 
-### Make deployment (fully or semi-)Manual
-You can play with cloudflare and github to make deployment of your site completely manual. This is a safeguard in case you accidentally make a change or delete something from your github, it won't affect your website.
-#### Semi-Manual
-You could do a semi-automatic deployment, with a "Production" branch on your github that is separate from the branch you edit. This creates an extra step before anything is published on Cloudflare. A safeguard against accidental changes/deletion of sorts :)
+### Storing Locally instead of on Github
+Although this guide is written with Cloudflare's Github integration in mind, particularly for easy online/mobile access, you can also keep your files locally on your PC and directly upload your assets onto your Pages project. This gives you full control over what happens to your files. (Keeping backups is a good idea. You can still use Github Desktop to do this, just keep your repository on your PC.)
+- Simply clone/download the repository as it is, customize it as you like, and create a **NEW** Pages project on Cloudflare, using "Direct Upload" to upload your files
+	- Once you have connected a Pages project with Github, there is no way to change the deployment method to Direct Upload or vice versa. 
+
+One thing that will NOT work the same is the "create-index" Action that only works on Github. 
+- I have made a "create-index.exe" that will execute the "create-index.py" files in the exact same way as they would work with the Action. You do not have to install python for this to work (if I did everything right). Simply run "create-index.exe" whenever you make a change and want to update the "index.html" files
+- Remember, this is EXACTLY THE SAME as the "create-index" Action, meaning you have to edit each "index.py" file when you rename folders, add a folder, want to exclude a file from the Index page, etc. (See [Adding/Renaming Folders](https://github.com/chungusg/hotlink-archive-template/tree/main#addingrenamingdeleting-folders) for how to do this)
+
+
+### Make deployment (semi-)Manual
+You can play with cloudflare and github to make deployment of your site a manual step you have to trigger, instead of automatic with each commit (default setting). This is a safeguard in case you accidentally make a change or delete something from your github, it won't affect your website.
+#### Deploy w/ Branches
+You could do a semi-automatic deployment with a "Production" branch on your github that is separate from the branch you edit. This creates an extra step before anything is published on Cloudflare. A safeguard against accidental changes/deletion of sorts :)
 
 <img src="https://hotlink-archive-template.pages.dev/rename1/pages-settings.gif" alt="navigate to settings on cloudflare">
 
@@ -203,10 +203,13 @@ You could do a semi-automatic deployment, with a "Production" branch on your git
 2. Choose your Production Branch (MAIN or CLOUDFLARE) and enable (or disable) automatic deployments
 - If you choose MAIN, every change you commit to MAIN will be published to Pages
 - If you choose CLOUDFLARE, any changes you make to MAIN will not show up on your Pages site until you Pull from MAIN to CLOUDFLARE 
-	- Or you can do it the other way, by editing on a side branch and only merging with MAIN when you want to publish.
+	- To Pull changes from MAIN to CLOUDFLARE, go to your github repository
+	- Above your files on the Left, you will see a toggle to choose which branch you are on.
+	- Choose Cloudflare. There will be a message like "This branch is 7 commits ahead of, 2 commits behind main." Click "2 commits behind"
+	- Click "Create a Pull Request". Then click "Merge Pull Request". If everything is correct, this should trigger a build on your Cloudflare
 
-#### Fully Manual
-Or you can create a manual command that you have to enter on github to trigger a deployment on cloudflare. I'd say if you're paranoid about anything happening to your site for any number of reasons, this is the safest choice. Unless you manually trigger the command, your Pages site will be completely untouched.
+#### Deploy w/ Github Actions
+Or you can create a manual command that you have to enter on github to trigger a deployment on cloudflare. If you're paranoid about anything happening to your site due to a mishap on the Github side, this is a safe choice. Unless you manually trigger the command, your Pages site will be completely untouched no matter if something happens to your repo.
 
 This can be done in many ways, I think the most straightforward is with [Deploy Hooks](https://developers.cloudflare.com/pages/configuration/deploy-hooks) (maybe in conjunction with Actions if you want to make it mobile-friendly), and might be a bit complicated, but not too hard to figure out with some Google-fu. 
 
@@ -220,7 +223,8 @@ Here’s some links I think will be useful (note: I don’t use this  method, so
 
 ### Storing Locally instead of on Github
 Although this guide is written with Cloudflare's Github integration in mind, particularly for easy online/mobile access, you can also keep your files locally on your PC and directly upload your assets onto your Pages project. This gives you full control over what happens to your files. (Keeping backups is a good idea. You can still use Github Desktop to do this, just keep your repository on your PC.)
-- Simply clone/download the repository as it is, customize it as you like, and upload everything to Cloudflare in a new **Pages** project (this is not an option for Workers).
+- Simply clone/download the repository as it is, customize it as you like, and create a **NEW** Pages project on Cloudflare, using "Direct Upload" to upload your files
+	- Once you have connected a Pages project with Github, there is no way to change the deployment method to Direct Upload or vice versa. 
 
 One thing that will NOT work the same is the "create-index" Action that only works on Github. 
 - I have made a "create-index.exe" that will execute the "create-index.py" files in the exact same way as they would work with the Action. You do not have to install python for this to work (if I did everything right). Simply run "create-index.exe" whenever you make a change and want to update the "index.html" files

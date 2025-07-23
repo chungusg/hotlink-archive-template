@@ -1,113 +1,78 @@
-#!/usr/bin/env python3
 
-# Author: Yotam Gingold <yotam@yotamgingold.com>
-# License: Public Domain (CC0)
-# URL: https://gist.github.com/yig/e59eaa22f5042320ecf18a87da4e44ae
+## Title for your Home Page
+home_title = '''Hotlink Archive Template'''
 
-from pathlib import Path
+# Set the caption for each folder's index page
+caption_dict = {
+    "Hotlink Archive Template": "edit this home page caption",
+    "fan-stuff": "make sure to match the folder names when writing these captions",
+    "rename1": "not too hard!"
+}
 
-SKIP_DIRS = [".git", "index.html","create-index.py","create-index.exe",".github","README.md"]
-exclude=SKIP_DIRS
 
-def make_index_html( path ):
-    path = Path(path)
-    if not path.is_dir():
-        raise TypeError( f'Path is not a directory: {path}' )
-    
-    assert path.is_dir()
-    # title = path.resolve().name
-    title = ( '''
-             Hotlink Archive Template
-             ''' )
-    print( "Generating index.html for", title )
-    
-    ## Open index.html
-    with open( path / 'index.html', 'w' ) as out:
+
+## -------- EXCLUSIONS ----------
+
+## folders you want to exclude from indexing
+exclude_dir = {'.git','.github', 'extra-folder'}
+	## DO NOT remove .git or .github from this exclusion list, or bad things will happen
+
+## files you want to exclude from indexing
+exclude_file = {'create-index.py','index.html','old-index.py','1index.html'}
+
+
+import os
+
+def write_index(root_dir):
+    index_file = "index.html"
+    f_template = '''<tr><td><a href="{name}">{name}</a></td></tr>'''
+
+    for dir_path, dirs, files in os.walk(root_dir):
         
-        ## Write the header
-        out.write( title.join( HEADERS ) )
+		## index file path
+        index_path = os.path.join(dir_path, index_file)
         
-				## Write body!
-        out.write( '''
-                  <p>
-                  Edit text
-                  <br><br>
-                  </p>
-                  ''' )
+        title = os.path.basename(dir_path)
+        if title == '.': title = home_title
+        
+        caption = [str(caption_dict.get(title,''))]
 
-        
-        out.write( '''
-          <table>
-					''' )
-        # out.write( '''
-        #   <table>
-				# 	<tr><th>Name</th><th>Size</th></tr>
-				# 	''' )
-        
-        ## Write a row for each file.
-        for file in sorted(list(path.iterdir())):
-            ## Skip the excluded files / folders.
-            if file.name in exclude : 
-                    continue
+
+        dirs[:] = [d for d in dirs if d not in exclude_dir]
+        files[:] = [f for f in files if f not in exclude_file]
+
+
+        with open(index_path, "w") as out:
             
-            ## File Size function
-            #size_in_bytes = file.stat().st_size
-            #pretty_size = HumanBytes.format( size_in_bytes, precision = 0 )
-            #out.write( f'<tr><td><a href="{file.name}">{file.name}</a></td><td>{pretty_size}</td></tr>\n'  )
-            out.write( f'<tr><td><a href="{file.name}">{file.name}</a></td></tr>\n'  )
-        
-        ## Write the footer.
-        out.write( '''
-					</table>
-					</body>
-					</html>
-					''' )
-
-## https://stackoverflow.com/questions/12523586/python-format-size-application-converting-b-to-kb-mb-gb-tb/63839503#63839503
-# from typing import List, Union
-# class HumanBytes:
-#     METRIC_LABELS: List[str] = ["B", "kB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"]
-#     BINARY_LABELS: List[str] = ["B", "KiB", "MiB", "GiB", "TiB", "PiB", "EiB", "ZiB", "YiB"]
-#     PRECISION_OFFSETS: List[float] = [0.5, 0.05, 0.005, 0.0005] # PREDEFINED FOR SPEED.
-#     PRECISION_FORMATS: List[str] = ["{}{:.0f} {}", "{}{:.1f} {}", "{}{:.2f} {}", "{}{:.3f} {}"] # PREDEFINED FOR SPEED.
-
-#     @staticmethod
-#     def format(num: Union[int, float], metric: bool=False, precision: int=1) -> str:
-#         """
-#         Human-readable formatting of bytes, using binary (powers of 1024)
-#         or metric (powers of 1000) representation.
-#         """
-
-#         assert isinstance(num, (int, float)), "num must be an int or float"
-#         assert isinstance(metric, bool), "metric must be a bool"
-#         assert isinstance(precision, int) and precision >= 0 and precision <= 3, "precision must be an int (range 0-3)"
-
-#         unit_labels = HumanBytes.METRIC_LABELS if metric else HumanBytes.BINARY_LABELS
-#         last_label = unit_labels[-1]
-#         unit_step = 1000 if metric else 1024
-#         unit_step_thresh = unit_step - HumanBytes.PRECISION_OFFSETS[precision]
-
-#         is_negative = num < 0
-#         if is_negative: # Faster than ternary assignment or always running abs().
-#             num = abs(num)
-
-#         for unit in unit_labels:
-#             if num < unit_step_thresh:
-#                 # VERY IMPORTANT:
-#                 # Only accepts the CURRENT unit if we're BELOW the threshold where
-#                 # float rounding behavior would place us into the NEXT unit: F.ex.
-#                 # when rounding a float to 1 decimal, any number ">= 1023.95" will
-#                 # be rounded to "1024.0". Obviously we don't want ugly output such
-#                 # as "1024.0 KiB", since the proper term for that is "1.0 MiB".
-#                 break
-#             if unit != last_label:
-#                 # We only shrink the number if we HAVEN'T reached the last unit.
-#                 # NOTE: These looped divisions accumulate floating point rounding
-#                 # errors, but each new division pushes the rounding errors further
-#                 # and further down in the decimals, so it doesn't matter at all.
-#                 num /= unit_step
-
-#         return HumanBytes.PRECISION_FORMATS[precision].format("-" if is_negative else "", num, unit)
+			## Write the header
+            out.write( title.join( HEADERS ) )
+            
+			## Write the page caption if available
+            out.write( "<p>" + title.join(caption) + "</p>")
+   
+            ## Write the Table
+            out.write( title.join( TABLE1 ) )
+            for name in files:                
+                out.write(f_template.format(name=name) + "\n")
+            for name in dirs:                
+                out.write(f_template.format(name=name) + "\n")
+            out.write( title.join( TABLE2 ) )
+            
+			## add HOME button to subfolders
+            if not title == home_title: out.write( title.join( HOME ) )
+			
+			## write footer
+            out.write( title.join( FOOTER ) )
+                
+HOME = ['''
+		<br>
+        <p>
+        Insert a HOME Button vvvv Replace the URL with your Home Page vvvvv
+        </p>
+        <p><strong>
+		<a href="https://hotlink-archive-template.pages.dev/">Home</a>
+		</strong></p>
+        ''']
 
 HEADERS = ['''<!DOCTYPE html>
 <html lang="en">
@@ -119,30 +84,7 @@ HEADERS = ['''<!DOCTYPE html>
 <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"> -->
 <!-- <link rel="stylesheet" href="fonts/Inter/inter.css"> -->
 <!-- <link rel="stylesheet" href="new.css"> -->
-<!-- The following <style> is new.css from https://newcss.net or https://github.com/xz/new.css -->
-<!--
-MIT License
 
-Copyright (c) 2020 Example (https://github.com/3x)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
--->
 <style type="text/css">
 :root {
 	--nc-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -194,32 +136,9 @@ SOFTWARE.
 	padding: 0;
 }
 
-address,
-area,
-article,
-aside,
-audio,
-blockquote,
-datalist,
-details,
-dl,
-fieldset,
-figure,
-form,
-input,
-iframe,
-img,
-meter,
-nav,
+
 ol,
-optgroup,
-option,
-output,
 p,
-pre,
-progress,
-ruby,
-section,
 table,
 textarea,
 ul,
@@ -236,7 +155,7 @@ html,input,select,button {
 body {
 	/* Center body in page */
 	margin: 0 auto;
-	max-width: 750px;
+	max-width: 600px;
 	padding: 2rem;
 	border-radius: 6px;
 	overflow-x: hidden;
@@ -293,14 +212,6 @@ h4 {
 	font-size: 1.25rem;
 }
 
-h5 {
-	font-size: 1rem;
-}
-
-h6 {
-	font-size: .875rem;
-}
-
 a {
 	color: var(--nc-lk-1);
 }
@@ -309,25 +220,6 @@ a:hover {
 	color: var(--nc-lk-2);
 }
 
-abbr:hover {
-	/* Set the '?' cursor while hovering an abbreviation */
-	cursor: help;
-}
-
-blockquote {
-	padding: 1.5rem;
-	background: var(--nc-bg-2);
-	border-left: 5px solid var(--nc-bg-3);
-}
-
-abbr {
-	cursor: help;
-}
-
-blockquote *:last-child {
-	padding-bottom: 0;
-	margin-bottom: 0;
-}
 
 header {
 	background: var(--nc-bg-2);
@@ -336,15 +228,11 @@ header {
 	
 	/* This sets the right and left margins to cancel out the body's margins. It's width is still the same, but the background stretches across the page's width. */
 
-	margin: -2rem calc(0px - (50vw - 50%)) 2rem;
-
-	/* Shorthand for:
-
 	margin-top: -2rem;
 	margin-bottom: 2rem;
 
 	margin-left: calc(0px - (50vw - 50%));
-	margin-right: calc(0px - (50vw - 50%)); */
+	margin-right: calc(0px - (50vw - 50%));
 	
 	padding-left: calc(50vw - 50%);
 	padding-right: calc(50vw - 50%);
@@ -366,8 +254,6 @@ header > *:last-child {
 	margin-bottom: 0;
 }
 
-
-
 hr {
 	/* Reset the border of the <hr> separator, then set a better line */
 	border: 0;
@@ -375,16 +261,6 @@ hr {
 	margin: 1rem auto;
 }
 
-fieldset {
-	margin-top: 1rem;
-	padding: 2rem;
-	border: 1px solid var(--nc-bg-3);
-	border-radius: 4px;
-}
-
-legend {
-	padding: auto .5rem;
-}
 
 table {
 	/* border-collapse sets the table's elements to share borders, rather than floating as separate "boxes". */
@@ -435,43 +311,27 @@ ol ol {
 	margin-bottom: 0;
 }
 
-mark {
-	padding: 3px 6px;
-	background: var(--nc-ac-1);
-	color: var(--nc-ac-tx);
-}
 
-textarea,
-select,
-input {
-	padding: 6px 12px;
-	margin-bottom: .5rem;
-	background: var(--nc-bg-2);
-	color: var(--nc-tx-2);
-	border: 1px solid var(--nc-bg-3);
-	border-radius: 4px;
-	box-shadow: none;
-	box-sizing: border-box;
-}
-
-img {
-	max-width: 100%;
-}
 </style>
 </head>
 <body>
 <header><h1 class="title">''', '''</h1></header>
 ''']
 
-if __name__ == '__main__': 
-     make_index_html('.')
-     
-with open("./rename1/index.py") as file:
-     exec(file.read())
-     
-with open("./fan-stuff/index.py") as file:
-     exec(file.read())
+TABLE1 = ['''
+          <table>
+          ''']
+
+TABLE2 = ['''
+          </table>
+          ''']
 
 
-    #  from .fan-stuff import make_index_html
-    #  make_index_html('.')
+FOOTER = ['''
+          </body>
+          </html>
+          ''']
+
+
+WEB_ROOT = "."
+write_index(WEB_ROOT)
