@@ -4,10 +4,9 @@
 # License: Public Domain (CC0)
 # URL: https://gist.github.com/yig/e59eaa22f5042320ecf18a87da4e44ae
 
-
 from pathlib import Path
 
-SKIP_DIRS = [".git", "index.html","index.py","script",".github"]
+SKIP_DIRS = [".git", "index.html","create-index.py","create-index.exe",".github","README.md"]
 exclude=SKIP_DIRS
 
 def make_index_html( path ):
@@ -16,12 +15,10 @@ def make_index_html( path ):
         raise TypeError( f'Path is not a directory: {path}' )
     
     assert path.is_dir()
-    
-	## Navigate to inside current folder!
-    path = path / 'fan-stuff'
-    
-    title = path.resolve().name
-
+    # title = path.resolve().name
+    title = ( '''
+             Hotlink Archive Template
+             ''' )
     print( "Generating index.html for", title )
     
     ## Open index.html
@@ -33,7 +30,7 @@ def make_index_html( path ):
 				## Write body!
         out.write( '''
                   <p>
-                  this is where I put my fan-stuff
+                  Edit text
                   <br><br>
                   </p>
                   ''' )
@@ -62,13 +59,6 @@ def make_index_html( path ):
         ## Write the footer.
         out.write( '''
 					</table>
-					<br>
-     
-        Insert a HOME Button    vvvv  Replace the URL with your Home Page  vvvvv
-	<p><strong>
-					<a href="https://hotlink-archive-template.pages.dev/">Home</a>
-					</strong></p>
- 
 					</body>
 					</html>
 					''' )
@@ -473,5 +463,15 @@ img {
 <header><h1 class="title">''', '''</h1></header>
 ''']
 
-# if __name__ == '__main__': make_index_html('.')
-make_index_html('.')
+if __name__ == '__main__': 
+     make_index_html('.')
+     
+with open("./rename1/index.py") as file:
+     exec(file.read())
+     
+with open("./fan-stuff/index.py") as file:
+     exec(file.read())
+
+
+    #  from .fan-stuff import make_index_html
+    #  make_index_html('.')
