@@ -114,41 +114,23 @@ The template repository uses a python Action to automatically create an HTML "ho
 
 This is particularly convenient for mobile use, as you can upload a file, and the python action automatically updates the Index page.
 
-- Also note that if you wish to change any of the content on your Index pages, you must edit the "index.py" file, not the "index.html" file. The "index.html" file gets re-written every time the "create-index" Action is run in order to keep the file index up to date.
-- If you don’t want this to automatically generate, just disable the “create-index” Action and delete the .py files. You can just type in the direct address to get to each file, or you can manually maintain an home/Index page yourself, which isn't hard if you know some basic HTML and can remember to do it consistently.
+- Note that if you wish to change any of the content on your Index pages, you must edit the "create-index.py" file, not the "index.html" file. The "index.html" file gets re-written every time the "create-index" Action is run in order to keep the file index up to date.
+- If you don’t want this to automatically generate, just disable the “create-index” Action and delete the .py files. You can just type in the direct address to get to each file, or you can manually maintain an home/Index page yourself.
 
 
 <br/>
 
-### Adding/Renaming/Deleting Folders
-> **Disclaimer:** This is a bit convoluted because I am extremely unqualified to be working with python OR HTML. There’s probably an easy way to do this. If you know a better way to do things, please let me know, it’d make my life easier too!
-
-Adding or renaming folders involves some extra steps. 
-
-**1. The "index.py" file inside the folder needs to be edited to match the parent folder name.**
-
-The place you need to do this is found near the top of the file (highlighted below)
-
-![where to change folder name](https://hotlink-archive-template.pages.dev/change-index-folder.png)
-
-
-**2. Then the outer-most "create-index.py" file needs to be updated to match the new name as well. If you’ve added a new folder, duplicate and adjust the code to match.** 
-
-The place you need to do this is found at the bottom (highlighted below)
-
-![where to edit](https://hotlink-archive-template.pages.dev/create-index.png)
-
-- If you don’t need any folders at all, great! Just delete them and their contents! No need to edit any files. (Don’t delete “index.html” or “create-index.py” or “.github/workflows”!)
-- If you would like to have these folders for later use, leave them as-is and simply edit the index files.
-	- The relevant lines of code are at the bottom of "create-index.py" like in the previous step for renaming folders. You may delete this code, or comment it out (using # at the beginning of a line will make it “invisible” to the program)
- 	- Then, add the folder’s name to the “exclusions” list at the top of the "create-index.py" file so that it doesn’t show up on your Index page (highlighted below)
+### Hiding Files/Folders
+-  Feel free to delete files and folders you don't need, but be careful not to delete anything important (Don’t delete “index.html” or “create-index.py” or “.github/workflows”!)
+- You can hide files and even entire folders without deleting them! This will create "invisible" files/folders. Any files/folders included in the "exclusions" list in "create-index.py" will not be listed on the Index page, however they can still be found through the direct URL to the file.
+	- On the flipside, this means simply hiding the file/folder from the Index page does not get rid of the file from your site. Anyone who has the URL will be able to find that file unless you remove it, or move its location to change the URL
+  
+ **Add the folder or file name to the “exclusions” list at the top of the "create-index.py" file so that it doesn’t show up on your Index page (highlighted below)**
 
 ![enter the folder you want to exclude](https://hotlink-archive-template.pages.dev/rename1/index-exclude.png)
 
-<br/>
 
-- You can also use this same concept to create "invisible" files/folders. Any files/folders included in the "exclusions" list in "(create-)index.py" will not be listed on the Index page, however they can still be found through the direct URL to the file.
-	- On the flipside, this means simply hiding the file/folder from the Index page does not get rid of the file from your site. Anyone who has the URL will be able to find that file unless you remove it, or move its location to change the URL
+
 <br/>
 
 ## Tips/Troubleshooting
@@ -180,8 +162,7 @@ Check your Github applications Repository Access settings. Go to your ACCOUNT Se
 ### Index action is failing!
 
 Go back to step 3 in **Basic Setup** and check if you’ve given Actions permission to read and write.
-If that’s not the issue, check to see if you’ve set up your "index.py" files correctly. The folder names should correspond to the parent folders, and the "create-index.py" file in the outer-most folder should have the correct folder names at the VERY BOTTOM.
-
+If that’s not the issue, Go into your Action History and check the error message to find the specific problem.
 <br/>
 
 ### How do I rename a folder (or move a file) in Github’s web UI?
