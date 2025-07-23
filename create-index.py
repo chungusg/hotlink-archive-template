@@ -18,7 +18,7 @@ exclude_dir = {'.git','.github', 'extra-folder'}
 	## DO NOT remove .git or .github from this exclusion list, or bad things will happen
 
 ## files you want to exclude from indexing
-exclude_file = {'create-index.py','index.html','old-index.py','1index.html'}
+exclude_file = {'create-index.py','index.html','create-index.exe'}
 
 
 import os
