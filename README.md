@@ -101,7 +101,6 @@ Github’s web UI is great, but it has major limitations. I highly recommend tha
 - **Download Github Desktop and “clone” (download a copy of) the repository you made.**
 - This is the best time to rename/rearrange folders + files, etc.
 	- There are other methods in the **Troubleshooting** section if you need, but Github Desktop is by far the easiest way
-	- see **Adding/Renaming Folders** for important info on how to properly rename/add folders
 	- see **About the Index Page** for how to customize your Index pages
 - Once you’re done editing, “push” (upload) all the changes you made to your online Github repository.
 
@@ -137,7 +136,7 @@ This is particularly convenient for mobile use, as you can upload a file, and th
 
 
 ### (Re)name your files before uploading
-It’s not possible to rename image/media files on Github’s web UI (it is possible with the local Git program). The "create-index" Action lists out the names of your files exactly, so you will end up with ugly strings of numbers and letters on your Index page if you don't rename them, which is terrible to look at and also plain old CONFUSING to navigate.
+It’s not possible to rename image/media files on Github’s web UI (it is possible with the local Git program). The "create-index" Action lists out the names of your files exactly, so you will likely end up with ugly strings of numbers and letters on your Index page if you don't rename them, which is CONFUSING to navigate.
 
 So if you're uploading on mobile or through Github on browser, name your files with easy to remember and distinctive filenames before you go ahead and upload them. This makes everything much easier, and it makes your Index page look nice :)
 
@@ -167,7 +166,7 @@ If that’s not the issue, Go into your Action History and check the error messa
 
 ### How do I rename a folder (or move a file) in Github’s web UI?
 
-It isn’t possible to directly rename a folder in Github’s web UI, doing it using Git on your computer is the most foolproof way to do it. But there is a way (except for media files). 
+It isn’t possible to directly rename a folder in Github’s web UI, doing it **using Github Desktop on your computer** is the simplest way to do it. But there is a way (except when media files are involved). 
 
 1. Go into the folder you want to rename and select a file such as “index.html” and enter the “edit” mode. 
 
@@ -175,7 +174,7 @@ It isn’t possible to directly rename a folder in Github’s web UI, doing it u
 
 You’ll have to do this to every file in the folder until they’re all in the new folder. 
 
-Unfortunately, *you can’t do this with media files like png/jpg/etc*, because entering the “edit” mode on a photo “breaks” it somehow, and bye-bye image :’)
+Unfortunately, **you can’t do this with media files like png/jpg/etc**, because entering the “edit” mode on a photo “breaks” it somehow, and bye-bye image :’)
 (Don’t worry if this happens, just don’t commit the change or roll it back in your history).
 
 <br/>
