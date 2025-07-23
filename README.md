@@ -113,7 +113,7 @@ The template repository uses a python Action to automatically create an HTML "ho
 
 This is particularly convenient for mobile use, as you can upload a file, and the python action automatically updates the Index page.
 
-- Note that if you wish to change any of the content on your Index pages, you must edit the "create-index.py" file, not the "index.html" file. The "index.html" file gets re-written every time the "create-index" Action is run in order to keep the file index up to date.
+- Note that if you wish to change any of the content on your Index pages, **you must edit the "create-index.py" file**, not the "index.html" file. The "index.html" file gets re-written every time the "create-index" Action is run in order to keep the file index up to date.
 - If you don’t want this to automatically generate, just disable the “create-index” Action and delete the .py files. You can just type in the direct address to get to each file, or you can manually maintain an home/Index page yourself.
 
 
