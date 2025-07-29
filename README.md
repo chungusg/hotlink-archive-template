@@ -136,7 +136,7 @@ This is particularly convenient for mobile use, as you can upload a file, and th
 
 
 ### (Re)name your files before uploading
-It’s not possible to rename image/media files on Github’s web UI (it is possible with the local Git program). The "create-index" Action lists out the names of your files exactly, so you will likely end up with ugly strings of numbers and letters on your Index page if you don't rename them, which is CONFUSING to navigate.
+The "create-index" Action lists out the names of your files exactly, so you will likely end up with ugly strings of numbers and letters on your Index page if you don't rename them, which is CONFUSING to navigate.
 
 So if you're uploading on mobile or through Github on browser, name your files with easy to remember and distinctive filenames before you go ahead and upload them. This makes everything much easier, and it makes your Index page look nice :)
 
