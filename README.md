@@ -218,16 +218,6 @@ Here’s some links I think will be useful (note: I don’t use this  method, so
 
 - [How to configure Github webooks](https://magefan.com/blog/configure-webhooks-in-github?srsltid=AfmBOoo4gAHxJdunxkJlQ6ZhVnGVAVEuyRn5hnHBqTdbYmcHWFwIM5s8)
 
-<br/>
-
-### Storing Locally instead of on Github
-Although this guide is written with Cloudflare's Github integration in mind, particularly for easy online/mobile access, you can also keep your files locally on your PC and directly upload your assets onto your Pages project. This gives you full control over what happens to your files. (Keeping backups is a good idea. You can still use Github Desktop to do this, just keep your repository on your PC.)
-- Simply clone/download the repository as it is, customize it as you like, and create a **NEW** Pages project on Cloudflare, using "Direct Upload" to upload your files
-	- Once you have connected a Pages project with Github, there is no way to change the deployment method to Direct Upload or vice versa. 
-
-One thing that will NOT work the same is the "create-index" Action that only works on Github. 
-- I have made a "create-index.exe" that will execute the "create-index.py" files in the exact same way as they would work with the Action. You do not have to install python for this to work (if I did everything right). Simply run "create-index.exe" whenever you make a change and want to update the "index.html" files
-- Remember, this is EXACTLY THE SAME as the "create-index" Action, meaning you have to edit each "index.py" file when you rename folders, add a folder, want to exclude a file from the Index page, etc. (See [Adding/Renaming Folders](https://github.com/chungusg/hotlink-archive-template/tree/main#addingrenamingdeleting-folders) for how to do this)
 
 <br/>
 
