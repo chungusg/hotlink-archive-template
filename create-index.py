@@ -6,8 +6,8 @@ home_title = '''Hotlink Archive Template'''
 caption_dict = {
     "Hotlink Archive Template": "edit this home page caption",
     "fan-stuff": "make sure to match the folder names when writing these captions (Refer to README / the Setup Guide to find where you can edit captions. Hint: it's in create-index.py under caption_dict)",
-    "rename1": "not too hard!"
-	"fan-stuff/subfolder": "caption for subfolders :)"
+    "rename1": "not too hard!",
+	"subfolder": "caption for subfolders :)"
 }
 
 
